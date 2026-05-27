@@ -1,0 +1,1489 @@
+<!DOCTYPE html><html lang="zh-Hant"><head>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技產業經營高階主管研習班 第十三期 | AI盛世下的致勝之道</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700;900&amp;family=Noto+Sans+TC:wght@300;400;500;700;900&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F0D3D;
+    --ink-2:#2C1554;
+    --ink-3:#3E1F70;
+    --plum:#5C2A9E;
+    --gold:#C9A961;
+    --gold-soft:#E5D4A8;
+    --gold-deep:#8C7235;
+    --cream:#F5F1E8;
+    --paper:#FAF6EF;
+    --line:rgba(201,169,97,.28);
+    --line-strong:rgba(201,169,97,.55);
+    --text:#241638;
+    --text-soft:#5A4A6E;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--text);font-family:'Noto Sans TC','Inter',-apple-system,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body{overflow-x:hidden}
+  .serif{font-family:'Noto Serif TC','Cormorant Garamond',serif}
+  .latin{font-family:'Cormorant Garamond',serif;font-style:italic}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(201,169,97,.20), transparent 55%),
+      radial-gradient(ellipse at 80% 70%, rgba(92,42,158,.55), transparent 50%),
+      linear-gradient(180deg, #140628 0%, #1F0D3D 50%, #2C1554 100%);
+    color:var(--cream);
+    padding:60px 8vw 80px;
+    display:flex;flex-direction:column;justify-content:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(201,169,97,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,169,97,.04) 1px, transparent 1px);
+    background-size:60px 60px;
+    mask-image:radial-gradient(ellipse at center, black 30%, transparent 75%);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"AI";
+    position:absolute;
+    right:-4vw;bottom:-14vw;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    font-size:38vw;line-height:.8;
+    color:rgba(201,169,97,.055);
+    pointer-events:none;
+    letter-spacing:-0.04em;
+  }
+  .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
+  .crest{
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:40px;
+    font-size:13px;letter-spacing:.35em;
+    color:var(--gold-soft);text-transform:uppercase;
+  }
+  .crest-line{flex:0 0 60px;height:1px;background:var(--gold)}
+  .crest-line.long{flex:1;max-width:300px}
+
+  .session-no{
+    display:inline-flex;align-items:baseline;gap:8px;
+    margin-bottom:24px;
+  }
+  .session-no .num{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    font-size:80px;line-height:.9;
+    color:var(--gold);
+  }
+  .session-no .label{
+    font-size:14px;letter-spacing:.3em;
+    color:var(--gold-soft);
+    text-transform:uppercase;
+  }
+
+  h1.title{
+    font-family:'Noto Serif TC',serif;
+    font-weight:700;
+    font-size:clamp(36px, 5.4vw, 76px);
+    line-height:1.15;
+    letter-spacing:.02em;
+    color:#fff;
+    margin-bottom:8px;
+  }
+  .title-deco{
+    color:var(--gold);
+    font-family:'Noto Serif TC',serif;
+    font-weight:400;
+    font-size:.72em;
+    letter-spacing:.08em;
+    margin-left:.32em;
+    white-space:nowrap;
+    vertical-align:.06em;
+  }
+  .title-deco::before{
+    content:"";
+    display:inline-block;
+    width:1px;height:.7em;
+    background:var(--gold);
+    margin-right:.5em;
+    vertical-align:-.08em;
+    opacity:.55;
+  }
+  .title-deco em{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    font-size:1.32em;
+    letter-spacing:0;
+    margin:0 .08em;
+    color:var(--gold);
+  }
+  .subtitle{
+    font-family:'Noto Serif TC',serif;
+    font-weight:600;
+    font-size:clamp(24px,2.8vw,38px);
+    color:var(--gold);
+    margin-top:22px;
+    letter-spacing:.06em;
+    display:inline-block;
+    padding-bottom:8px;
+    border-bottom:1px solid rgba(201,169,97,.35);
+  }
+  .subtitle em{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    color:var(--gold-soft);
+    margin:0 .12em;
+  }
+  .lead{
+    margin-top:36px;
+    max-width:760px;
+    font-size:17px;font-weight:400;
+    color:rgba(245,241,232,.88);
+    line-height:1.85;
+  }
+
+  .meta-row{
+    margin-top:56px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .meta-cell{
+    padding:22px 24px;
+    border-right:1px solid var(--line);
+  }
+  .meta-cell:last-child{border-right:none}
+  .meta-cell .k{
+    font-size:11px;letter-spacing:.28em;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .meta-cell .v{
+    font-family:'Noto Serif TC',serif;
+    font-size:18px;color:#fff;font-weight:500;
+  }
+  .meta-cell .v .small{font-size:13px;color:var(--gold-soft);display:block;margin-top:2px;font-weight:300;font-family:'Noto Sans TC',sans-serif}
+
+  .organizer{
+    margin-top:48px;
+    display:flex;align-items:center;gap:20px;
+    color:var(--gold-soft);font-size:13px;letter-spacing:.2em;
+  }
+  .organizer .dot{width:5px;height:5px;background:var(--gold);border-radius:50%}
+
+  /* ===== CTA BUTTONS ===== */
+  .cta-row{
+    margin-top:40px;
+    display:flex;gap:14px;flex-wrap:wrap;align-items:center;
+  }
+  .btn-apply{
+    display:inline-flex;align-items:center;gap:12px;
+    padding:16px 32px;
+    background:var(--gold);color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+    font-size:15px;font-weight:600;letter-spacing:.18em;
+    text-decoration:none;
+    border:1px solid var(--gold);
+    transition:background .25s ease, transform .25s ease;
+  }
+  .btn-apply:hover{background:var(--gold-soft);transform:translateY(-1px);box-shadow:0 14px 28px -10px rgba(201,169,97,.45);}
+  .btn-apply .arrow{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:20px;
+    transition:transform .25s ease;
+  }
+  .btn-apply:hover .arrow{transform:translateX(4px);}
+  .btn-apply--ghost{
+    background:transparent;color:var(--gold);
+    border-color:var(--gold);
+  }
+  .btn-apply--ghost:hover{background:var(--gold);color:var(--ink);box-shadow:0 14px 28px -10px rgba(201,169,97,.45);}
+  .btn-apply--dark{
+    background:var(--ink);color:var(--gold);
+    border-color:var(--ink);
+  }
+  .btn-apply--dark:hover{background:var(--ink-3);}
+  .cta-deadline{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 18px;
+    border:1px dashed var(--gold);
+    background:rgba(201,169,97,.06);
+    font-family:'Inter',sans-serif;
+    font-size:11px;font-weight:600;
+    color:var(--gold);
+    letter-spacing:.28em;
+    text-transform:uppercase;
+  }
+  .cta-deadline::before{
+    content:"";
+    width:6px;height:6px;
+    background:var(--gold);
+    border-radius:50%;
+    box-shadow:0 0 0 4px rgba(201,169,97,.18);
+    animation:pulseGold 2.4s ease-in-out infinite;
+  }
+  @keyframes pulseGold{
+    0%,100%{box-shadow:0 0 0 4px rgba(201,169,97,.18)}
+    50%{box-shadow:0 0 0 7px rgba(201,169,97,.04)}
+  }
+  .price-cta{
+    position:relative;z-index:2;
+    margin-top:28px;
+    padding-top:24px;
+    border-top:1px solid rgba(201,169,97,.18);
+    display:flex;justify-content:space-between;align-items:center;
+    gap:18px;flex-wrap:wrap;
+  }
+  .price-cta .note{
+    font-size:13px;letter-spacing:.04em;
+    color:rgba(229,212,168,.65);
+    font-weight:300;
+  }
+  .price-cta .btn-apply{
+    flex:1;justify-content:center;
+    padding:18px 32px;
+    font-size:16px;
+    min-width:240px;
+  }
+
+  /* ===== SECTION BASE ===== */
+  section{padding:100px 8vw}
+  .container{max-width:1200px;margin:0 auto}
+  .section-label{
+    display:flex;align-items:center;gap:14px;
+    font-size:12px;letter-spacing:.4em;
+    color:var(--gold-deep);
+    text-transform:uppercase;
+    margin-bottom:18px;
+    font-weight:500;
+  }
+  .section-label .ord{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    font-size:24px;letter-spacing:0;
+    color:var(--gold);
+    text-transform:none;
+    line-height:1;
+    display:inline-flex;align-items:center;gap:14px;
+  }
+  .section-label .ord::after{
+    content:"";display:inline-block;
+    width:36px;height:1px;background:var(--gold);
+    opacity:.6;
+  }
+  .section-title{
+    font-family:'Noto Serif TC',serif;
+    font-weight:700;
+    font-size:clamp(28px,3.4vw,46px);
+    color:var(--ink);
+    line-height:1.25;
+    margin-bottom:14px;
+  }
+  .section-title em{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold-deep);font-weight:600;
+  }
+  .section-sub{
+    color:var(--text);
+    font-size:16px;font-weight:400;
+    max-width:720px;
+    margin-bottom:60px;
+  }
+
+  /* ===== OBJECTIVES ===== */
+  .objectives{
+    background:linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+    position:relative;
+  }
+  .obj-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;
+    align-items:start;
+  }
+  .obj-text{
+    font-size:16px;line-height:1.95;color:var(--text);
+    font-weight:400;
+  }
+  .obj-text p{margin-bottom:18px}
+  .obj-text strong{color:var(--ink);font-weight:600}
+  .obj-quote{
+    position:relative;
+    padding:40px 40px 12px;
+    background:var(--white);
+    border-top:3px solid var(--gold);
+    box-shadow:0 30px 60px -30px rgba(31,13,61,.25);
+  }
+  .obj-quote .q-title{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:16px;
+    font-family:'Noto Serif TC',serif;
+    font-size:20px;color:var(--ink);font-weight:700;
+    padding-bottom:18px;
+    margin-bottom:6px;
+    border-bottom:1px solid var(--line);
+    letter-spacing:.04em;
+  }
+  .obj-quote .q-title .en{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    font-size:15px;letter-spacing:.04em;
+    color:var(--gold-deep);
+  }
+  .cap-list{
+    list-style:none;margin:0;padding:0;
+  }
+  .cap-item{
+    display:grid;
+    grid-template-columns:48px 1fr;
+    gap:18px;
+    padding:22px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .cap-item:last-child{border-bottom:none}
+  .cap-num{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    font-size:30px;color:var(--gold);
+    line-height:1;
+    padding-top:2px;
+  }
+  .cap-head{
+    font-family:'Noto Serif TC',serif;
+    font-size:17px;font-weight:700;
+    color:var(--ink);
+    letter-spacing:.08em;
+    margin-bottom:6px;
+  }
+  .cap-desc{
+    font-size:14.5px;line-height:1.75;
+    color:var(--text);font-weight:400;
+  }
+
+  /* ===== 4 MODULES ===== */
+  .modules{
+    background:var(--ink);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .modules::before{
+    content:"";position:absolute;
+    top:-200px;right:-200px;width:600px;height:600px;
+    background:radial-gradient(circle, rgba(201,169,97,.08), transparent 70%);
+  }
+  .modules .section-label{color:var(--gold)}
+  .modules .section-title{color:#fff}
+  .modules .section-title em{color:var(--gold)}
+  .modules .section-sub{color:rgba(245,241,232,.82)}
+
+  .module-grid{
+    display:grid;grid-template-columns:repeat(4, 1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    position:relative;z-index:2;
+  }
+  .module{
+    padding:48px 32px;
+    border-right:1px solid var(--line);
+    transition:background .3s ease;
+    position:relative;
+  }
+  .module:last-child{border-right:none}
+  .module:hover{background:rgba(201,169,97,.05)}
+  .module-num{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    font-size:54px;color:var(--gold);
+    line-height:1;margin-bottom:18px;
+  }
+  .module-zh{
+    font-family:'Noto Serif TC',serif;
+    font-size:24px;font-weight:700;
+    color:#fff;letter-spacing:.05em;
+    margin-bottom:6px;
+  }
+  .module-en{
+    font-size:11px;letter-spacing:.35em;
+    color:var(--gold-soft);
+    text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  .module-desc{
+    font-size:14px;color:rgba(245,241,232,.82);
+    line-height:1.8;font-weight:400;
+  }
+  .module-tag{
+    display:inline-block;
+    margin-top:18px;
+    font-size:11px;letter-spacing:.28em;
+    color:var(--gold);
+    padding:4px 12px;
+    border:1px solid var(--line-strong);
+    border-radius:20px;
+    text-transform:uppercase;
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+  }
+
+  /* ===== CURRICULUM TABLE ===== */
+  .curriculum{
+    background:var(--paper);
+  }
+  .cur-wrap{
+    background:#fff;
+    border:1px solid var(--line);
+    box-shadow:0 50px 100px -50px rgba(31,13,61,.22);
+    overflow:hidden;
+  }
+  table.cur{
+    width:100%;border-collapse:collapse;
+    font-size:17px;
+    table-layout:fixed;
+  }
+  table.cur th{
+    background:var(--ink);color:var(--gold-soft);
+    text-align:left;
+    padding:20px 22px;
+    font-size:13px;letter-spacing:.28em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  table.cur td{
+    padding:18px 22px;
+    border-top:1px solid rgba(31,13,61,.10);
+    vertical-align:top;
+    color:var(--text);
+    line-height:1.6;
+  }
+  table.cur tr.mod-row td{
+    background:var(--ink);
+    font-weight:700;
+    color:#fff;
+    font-family:'Noto Serif TC',serif;
+    letter-spacing:.06em;
+    font-size:18px;
+    padding:22px 22px;
+    border-left:4px solid var(--gold);
+  }
+  table.cur tr.mod-row td .mn{
+    display:inline-block;
+    width:28px;height:28px;
+    margin-right:14px;
+    background:var(--gold);color:var(--ink);
+    border-radius:50%;
+    text-align:center;line-height:28px;
+    font-size:13px;font-weight:700;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+  }
+  table.cur .topic{font-weight:500;color:var(--ink-2);font-size:17px;}
+  table.cur .hours{
+    color:var(--gold-deep);
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:700;font-size:22px;
+    white-space:nowrap;
+  }
+  table.cur .faculty{
+    font-size:15px;color:var(--text-soft);
+    line-height:1.7;
+  }
+
+  /* ===== SCHEDULE WEEKS ===== */
+  .schedule{
+    background:linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+  }
+  .weeks{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:14px;
+  }
+  .week{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:22px 16px 24px;
+    position:relative;
+    transition:all .25s ease;
+  }
+  .week:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(31,13,61,.28)}
+  .week-no{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    color:var(--gold-deep);
+    font-size:16px;
+    letter-spacing:.1em;
+  }
+  .week-date{
+    font-family:'Noto Serif TC',serif;
+    font-weight:700;
+    font-size:22px;color:var(--ink);
+    margin-top:3px;
+  }
+  .week-tag{
+    margin-top:8px;
+    font-size:11px;letter-spacing:.2em;
+    color:var(--gold-deep);
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .week-divider{
+    height:1px;background:var(--line);
+    margin:16px 0;
+  }
+  .slot{margin-bottom:14px}
+  .slot:last-child{margin-bottom:0}
+  .slot-label{
+    font-size:11px;letter-spacing:.22em;
+    color:var(--gold-deep);
+    text-transform:uppercase;
+    margin-bottom:5px;
+    font-weight:700;
+  }
+  .slot-topic{
+    font-size:15px;color:var(--ink);
+    font-weight:500;line-height:1.5;
+  }
+  .slot-spk{
+    font-size:13px;color:var(--text-soft);
+    margin-top:4px;line-height:1.5;
+  }
+
+  .note-box{
+    margin-top:36px;
+    padding:24px 28px;
+    background:#fff;
+    border-left:3px solid var(--gold);
+    font-size:13.5px;color:var(--text-soft);line-height:1.85;
+  }
+  .note-box .nh{
+    font-family:'Noto Serif TC',serif;
+    color:var(--ink);font-weight:700;font-size:15px;
+    margin-bottom:8px;display:block;
+  }
+
+  /* ===== SPEAKERS ===== */
+  .speakers{
+    background:var(--ink-2);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .speakers::before{
+    content:"FACULTY";
+    position:absolute;
+    top:40px;right:8vw;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:14vw;
+    color:rgba(201,169,97,.04);
+    pointer-events:none;
+    letter-spacing:-.02em;
+  }
+  .speakers .section-label{color:var(--gold)}
+  .speakers .section-title{color:#fff}
+  .speakers .section-title em{color:var(--gold)}
+  .speakers .section-sub{color:rgba(245,241,232,.82)}
+
+  .spk-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    position:relative;z-index:2;
+  }
+  .spk{
+    background:var(--ink-2);
+    padding:32px 28px;
+    transition:background .25s ease;
+  }
+  .spk:hover{background:var(--ink-3)}
+  .spk-name{
+    font-family:'Noto Serif TC',serif;
+    font-size:20px;font-weight:700;color:#fff;
+    line-height:1.45;
+    margin-bottom:6px;
+  }
+  .spk-role{
+    font-size:14px;color:var(--gold-soft);
+    line-height:1.6;
+  }
+  /* Closing panel — trio card */
+  .spk-panel{
+    display:flex;flex-direction:column;
+    background:
+      linear-gradient(180deg, rgba(201,169,97,.05) 0%, transparent 60%),
+      var(--ink-2);
+  }
+  .spk-panel .spk-panel-tag{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    font-size:14px;
+    color:var(--gold);
+    letter-spacing:.04em;
+    padding-bottom:14px;
+    margin-bottom:14px;
+    border-bottom:1px solid rgba(201,169,97,.32);
+  }
+  .spk-panel .spk-name{
+    font-size:16px;
+    line-height:1.45;
+    margin-bottom:10px;
+    padding-bottom:10px;
+    border-bottom:1px dashed rgba(201,169,97,.18);
+  }
+  .spk-panel .spk-name:nth-last-of-type(1){
+    border-bottom:none;
+    margin-bottom:14px;
+  }
+  .spk-panel .spk-role{
+    margin-top:auto;
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+
+  /* ===== PRICING ===== */
+  .pricing{
+    background:var(--paper);
+  }
+  .price-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:50px;
+    align-items:start;
+  }
+  .price-main{
+    background:linear-gradient(160deg, var(--ink) 0%, var(--ink-3) 100%);
+    color:var(--cream);
+    padding:48px 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  .price-main::before{
+    content:"";
+    position:absolute;top:0;right:0;
+    width:200px;height:200px;
+    background:radial-gradient(circle at top right, rgba(201,169,97,.2), transparent 70%);
+  }
+  .price-main h3{
+    font-family:'Noto Serif TC',serif;
+    color:#fff;font-weight:700;
+    font-size:26px;margin-bottom:8px;
+    position:relative;z-index:2;
+  }
+  .price-main .sub{
+    color:var(--gold-soft);font-size:14px;
+    letter-spacing:.22em;margin-bottom:32px;
+    position:relative;z-index:2;
+  }
+  .price-tier{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:20px 0;
+    border-bottom:1px solid rgba(201,169,97,.18);
+    position:relative;z-index:2;
+  }
+  .price-tier:last-child{border-bottom:none}
+  .price-tier .pname{
+    font-family:'Noto Serif TC',serif;
+    color:#fff;font-size:18px;font-weight:500;
+  }
+  .price-tier .pdesc{
+    display:block;font-size:13px;
+    color:rgba(229,212,168,.7);
+    font-family:'Noto Sans TC',sans-serif;
+    font-weight:300;letter-spacing:.05em;
+    margin-top:4px;
+  }
+  .price-tier .pamt{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;font-size:32px;
+    color:var(--gold);
+    white-space:nowrap;
+  }
+  .price-tier .pamt .cur{font-size:15px;color:var(--gold-soft);margin-right:6px}
+
+  .cxo-box{
+    background:#fff;
+    padding:36px 34px;
+    border-top:3px solid var(--gold);
+    box-shadow:0 30px 60px -30px rgba(31,13,61,.25);
+  }
+  .cxo-box h3{
+    font-family:'Noto Serif TC',serif;
+    color:var(--ink);font-weight:700;
+    font-size:24px;margin-bottom:8px;
+  }
+  .cxo-box .sub{
+    color:var(--gold-deep);font-size:13px;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  .cxo-item{
+    display:grid;
+    grid-template-columns:36px 1fr auto;
+    gap:18px;align-items:start;
+    padding:20px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .cxo-item:last-child{border-bottom:none}
+  .cxo-item .cxo-num{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:600;
+    font-size:26px;color:var(--gold);
+    line-height:1.1;
+  }
+  .cxo-item .title{
+    font-family:'Noto Serif TC',serif;
+    font-size:16px;color:var(--ink);font-weight:700;
+    line-height:1.55;letter-spacing:.04em;
+  }
+  .cxo-item .dur{
+    grid-column:2;
+    font-size:13px;color:var(--text-soft);
+    margin-top:6px;letter-spacing:.04em;
+  }
+  .cxo-item .amt{
+    grid-column:3;grid-row:1 / span 2;
+    align-self:center;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;font-size:26px;
+    color:var(--gold-deep);
+    white-space:nowrap;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:#140628;
+    color:rgba(245,241,232,.6);
+    padding:70px 8vw 36px;
+    border-top:1px solid var(--line);
+  }
+  .ft-top{
+    text-align:center;
+    padding-bottom:48px;
+    border-bottom:1px solid rgba(201,169,97,.18);
+  }
+  footer .badge{
+    display:inline-flex;align-items:center;gap:12px;
+    margin-bottom:18px;
+    font-size:11px;letter-spacing:.4em;
+    color:var(--gold);
+    text-transform:uppercase;
+  }
+  footer .badge::before,footer .badge::after{
+    content:"";width:30px;height:1px;background:var(--gold);
+  }
+  footer .ft-title{
+    font-family:'Noto Serif TC',serif;
+    color:#fff;font-size:22px;font-weight:500;
+    margin-bottom:8px;
+  }
+  footer .ft-tagline{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:16px;
+    color:var(--gold-soft);
+    letter-spacing:.04em;
+  }
+  .ft-cols{
+    display:grid;grid-template-columns:repeat(3, 1fr);
+    gap:48px;
+    padding:48px 0 36px;
+    max-width:1200px;margin:0 auto;
+  }
+  .ft-col h4{
+    font-family:'Inter',sans-serif;
+    font-size:11px;font-weight:600;letter-spacing:.4em;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin-bottom:18px;
+    padding-bottom:14px;
+    border-bottom:1px solid rgba(201,169,97,.18);
+  }
+  .ft-col .row{
+    margin-bottom:10px;
+    font-size:13.5px;
+    line-height:1.7;
+    color:rgba(245,241,232,.72);
+  }
+  .ft-col .row strong{
+    color:#fff;font-weight:600;font-family:'Noto Serif TC',serif;
+  }
+  .ft-col a{
+    color:rgba(245,241,232,.72);
+    text-decoration:none;
+    border-bottom:1px dotted rgba(201,169,97,.4);
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .ft-col a:hover{
+    color:var(--gold);
+    border-bottom-color:var(--gold);
+  }
+  .ft-bottom{
+    max-width:1200px;margin:0 auto;
+    padding-top:28px;
+    border-top:1px solid rgba(201,169,97,.12);
+    display:flex;justify-content:space-between;align-items:center;
+    gap:18px;flex-wrap:wrap;
+    font-size:12px;letter-spacing:.15em;
+    color:rgba(245,241,232,.4);
+  }
+  .ft-bottom .right{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:13px;letter-spacing:.04em;
+    color:var(--gold-deep);
+  }
+  @media (max-width: 900px){
+    .ft-cols{grid-template-columns:1fr;gap:32px}
+  }
+
+  /* ===== STICKY MINI-NAV ===== */
+  .minibar{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(20,6,40,.96);
+    border-bottom:1px solid rgba(201,169,97,.22);
+    padding:14px 8vw;
+    display:flex;justify-content:space-between;align-items:center;
+    gap:18px;
+    transform:translateY(-100%);
+    transition:transform .35s var(--ease, cubic-bezier(.2,.6,.2,1));
+    will-change:transform;
+  }
+  .minibar.visible{transform:translateY(0)}
+  .minibar .brand{
+    font-family:'Noto Serif TC',serif;
+    color:#fff;font-size:14px;font-weight:600;
+    letter-spacing:.08em;
+    flex-shrink:0;
+  }
+  .minibar .brand em{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;color:var(--gold);font-weight:600;
+    font-size:1.15em;margin:0 .1em;
+  }
+  .minibar nav{
+    display:flex;gap:36px;
+    flex:1;justify-content:center;
+  }
+  .minibar nav a{
+    color:rgba(245,241,232,.62);
+    text-decoration:none;
+    font-family:'Noto Sans TC',sans-serif;
+    font-size:13px;
+    letter-spacing:.18em;
+    font-weight:500;
+    transition:color .2s ease;
+    position:relative;
+  }
+  .minibar nav a:hover{color:var(--gold)}
+  .minibar .nav-cta{
+    background:var(--gold);
+    color:var(--ink);
+    padding:9px 18px;
+    font-size:12px;
+    letter-spacing:.22em;
+    text-decoration:none;
+    font-weight:600;
+    font-family:'Noto Sans TC',sans-serif;
+    transition:background .2s ease;
+    flex-shrink:0;
+  }
+  .minibar .nav-cta:hover{background:var(--gold-soft)}
+  /* anchors clear the minibar */
+  section[id]{scroll-margin-top:80px}
+  @media (max-width: 900px){
+    .minibar nav{display:none}
+    .minibar{padding:12px 6vw}
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px){
+    .meta-row{grid-template-columns:1fr 1fr}
+    .meta-cell:nth-child(2){border-right:none}
+    .meta-cell:nth-child(1),.meta-cell:nth-child(2){border-bottom:1px solid var(--line)}
+    .obj-grid{grid-template-columns:1fr;gap:40px}
+    .module-grid{grid-template-columns:1fr 1fr}
+    .module:nth-child(2){border-right:none}
+    .module:nth-child(1),.module:nth-child(2){border-bottom:1px solid var(--line)}
+    .weeks{
+      display:flex;
+      grid-template-columns:none;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      gap:12px;
+      padding-bottom:18px;
+      margin:0 -6vw;
+      padding-left:6vw;padding-right:6vw;
+      -webkit-overflow-scrolling:touch;
+    }
+    .week{
+      flex:0 0 78vw;
+      scroll-snap-align:start;
+    }
+    .spk-grid{grid-template-columns:1fr 1fr}
+    .price-grid{grid-template-columns:1fr}
+    section{padding:70px 6vw}
+    .hero{padding:50px 6vw 60px}
+    table.cur{font-size:12.5px}
+    table.cur th,table.cur td{padding:12px 10px}
+  }
+  @media (max-width: 600px){
+    .meta-row{grid-template-columns:1fr}
+    .meta-cell{border-right:none !important;border-bottom:1px solid var(--line)}
+    .module-grid{grid-template-columns:1fr}
+    .module{border-right:none;border-bottom:1px solid var(--line)}
+    .spk-grid{grid-template-columns:1fr}
+    .session-no .num{font-size:60px}
+  }
+</style>
+<style id="uw-video-styles">
+      video.uw-v-0pbaclq {
+        transform-origin: center center !important;
+        transform: var(--uw-transform) !important;
+      }
+    </style><link id="gfont-Inter" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"><link id="gfont-Roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"></head>
+<body style="">
+
+<!-- STICKY MINI-NAV -->
+<div class="minibar" id="minibar">
+  <div class="brand">科管班 <em>13</em></div>
+  <nav>
+    <a href="#objectives">課程目標</a>
+    <a href="#modules">模組</a>
+    <a href="#curriculum">課表</a>
+    <a href="#speakers">講師</a>
+    <a href="#pricing">報名方案</a>
+  </nav>
+  <a class="nav-cta" href="https://itricollege.surveycake.biz/s/eLnkX" target="_blank" rel="noopener">立即報名 →</a>
+</div>
+<script>
+  (function(){
+    var bar = document.getElementById('minibar');
+    var trigger = function(){ return window.innerHeight * 0.78; };
+    var onScroll = function(){
+      if (window.scrollY > trigger()) bar.classList.add('visible');
+      else bar.classList.remove('visible');
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="session-no" style="display:none">
+      <span class="num">13</span>
+      <span class="label">—&nbsp; Thirteenth Cohort &nbsp;2026</span>
+    </div>
+
+    <h1 class="title">
+      科技產業經營<br>
+      高階主管研習班 <span class="title-deco">第<em>13</em>期</span>
+    </h1>
+    <div class="subtitle"><em>AI</em> 盛世下的致勝之道</div>
+
+    <p class="lead">
+      從政經局勢、科技創新、到高階決策思維，打造科技產業領導者的全局經營力。<br>
+      課程專為面對 AI 驅動全球產業版圖重組的企業領導者所設計，<br>
+      使經營心法從傳統經驗導向，調適為可持續升級的「策略思維與決策系統」。
+    </p>
+
+    <div class="meta-row">
+      <div class="meta-cell">
+        <div class="k">Duration</div>
+        <div class="v">07/31 — 09/18<span class="small">2026 · 48 小時 / 7 週</span></div>
+      </div>
+      <div class="meta-cell">
+        <div class="k">Venue</div>
+        <div class="v">工研院 臺北 BR6<span class="small">BR6 · 電腦教室</span></div>
+      </div>
+      <div class="meta-cell">
+        <div class="k">Audience</div>
+        <div class="v">副總級以上主管<span class="small">限 30 人 · 邀請審查</span></div>
+      </div>
+      <div class="meta-cell">
+        <div class="k">Tuition</div>
+        <div class="v">NT$ 99,000 起<span class="small">早鳥優惠 NT$ 94,000</span></div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn-apply" href="https://itricollege.surveycake.biz/s/eLnkX" target="_blank" rel="noopener">
+        立即報名 <span class="arrow">→</span>
+      </a>
+      <a class="btn-apply btn-apply--ghost" href="#curriculum">
+        了解課程 <span class="arrow">↓</span>
+      </a>
+      <span class="cta-deadline">Early Bird · until 6/30</span>
+    </div>
+
+  </div>
+</header>
+
+<!-- OBJECTIVES -->
+<section class="objectives" id="objectives">
+  <div class="container">
+    <div class="section-label"><span class="ord">I</span>Programme Vision</div>
+    <h2 class="section-title">在變局中重塑經營心法，<br>讓決策跟得上 <em>AI</em> 的速度。</h2>
+    <p class="section-sub">透過產業巨擘的遠見、與具高度影響力的專家深度對談交流，突破領導決策困境、拆解轉型實踐挑戰，掌握創新科技應用與部署未來商機。</p>
+
+    <div class="obj-grid">
+      <div class="obj-text">
+        <p>本課程專為面對 <strong>AI 驅動全球產業版圖重組</strong> 的企業領導者所設計，核心在於使經營心法從傳統經驗導向，調適為可持續升級的「<strong>策略思維與決策系統</strong>」。</p>
+        <p>透過產業巨擘的遠見、以及與具高度影響力的專家深度對談交流，學員將突破領導決策困境、拆解轉型實踐挑戰，掌握創新科技應用與部署未來商機，<strong>強化企業在變局中的長遠競爭優勢</strong>。</p>
+        <p>七週密集課程串連洞察、創新、布局與決策四大模組，最後以分組專題實作收斂為企業可執行的成長策略藍圖。</p>
+      </div>
+      <div class="obj-quote">
+        <div class="q-title">學習收穫 <span class="en">Four Capabilities</span></div>
+        <ul class="cap-list">
+          <li class="cap-item">
+            <div class="cap-num">01</div>
+            <div>
+              <div class="cap-head">洞悉變局</div>
+              <div class="cap-desc">掌握 AI 新工業版圖、全球政經與供應鏈趨勢，強化變局下的應變韌性。</div>
+            </div>
+          </li>
+          <li class="cap-item">
+            <div class="cap-num">02</div>
+            <div>
+              <div class="cap-head">驅動創新</div>
+              <div class="cap-desc">從 AI 生態系到智慧應用，以創新科技為槓桿，重塑商業模式。</div>
+            </div>
+          </li>
+          <li class="cap-item">
+            <div class="cap-num">03</div>
+            <div>
+              <div class="cap-head">領導布局</div>
+              <div class="cap-desc">重新定義價值主張與技術藍圖，成功部署關鍵資源，敏捷轉型再成長。</div>
+            </div>
+          </li>
+          <li class="cap-item">
+            <div class="cap-num">04</div>
+            <div>
+              <div class="cap-head">超速決策</div>
+              <div class="cap-desc">商業策略模擬實戰、代理型 AI 部署與分組專題研討，鍛鍊進化營運決策。</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 MODULES -->
+<section class="modules" id="modules">
+  <div class="container">
+    <div class="section-label"><span class="ord">II</span>Four Pillars</div>
+    <h2 class="section-title">四大模組 · <em>Insight to Impact</em></h2>
+    <p class="section-sub">從外部洞察到內部決策，從技術佈局到組織轉型，環環相扣構築領導者的全局經營力。</p>
+
+    <div class="module-grid">
+      <div class="module">
+        <div class="module-num">01</div>
+        <div class="module-zh">洞悉變局</div>
+        <div class="module-en">Sense the Shift</div>
+        <div class="module-desc">解讀 AI 新工業版圖、國際政經、供應鏈重塑，建立宏觀變局的思考框架。</div>
+        <div class="module-tag">5 hrs</div>
+      </div>
+      <div class="module">
+        <div class="module-num">02</div>
+        <div class="module-zh">驅動創新</div>
+        <div class="module-en">Drive Innovation</div>
+        <div class="module-desc">從全球科技競局到智慧機器人、AI 生態系與創投 ROI，掌握創新槓桿。</div>
+        <div class="module-tag">9 hrs</div>
+      </div>
+      <div class="module">
+        <div class="module-num">03</div>
+        <div class="module-zh">領導布局</div>
+        <div class="module-en">Lead the Future</div>
+        <div class="module-desc">客戶價值、跨域思維、AI 治理與技術藍圖，部署轉型再成長的關鍵布局。</div>
+        <div class="module-tag">12 hrs</div>
+      </div>
+      <div class="module">
+        <div class="module-num">04</div>
+        <div class="module-zh">超速決策</div>
+        <div class="module-en">Decide Faster</div>
+        <div class="module-desc">代理型 AI、商業模擬實戰、分組專題，鍛鍊面對未知的進化型決策能力。</div>
+        <div class="module-tag">22 hrs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM TABLE -->
+<section class="curriculum" id="curriculum">
+  <div class="container">
+    <div class="section-label"><span class="ord">III</span>Curriculum</div>
+    <h2 class="section-title">課程安排 · <em>48 hours / 7 weeks</em></h2>
+    <p class="section-sub">12 門主題課程串聯四大模組，邀請產學研頂尖領袖授課，並結合分組專題與商業策略模擬。</p>
+
+    <div class="cur-wrap">
+      <table class="cur">
+        <thead>
+          <tr>
+            <th style="width:42%">課程主題</th>
+            <th style="width:14%;white-space:nowrap">時數</th>
+            <th style="width:44%">師資安排</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="mod-row"><td colspan="3"><span class="mn">1</span>洞悉變局　Sense the Shift</td></tr>
+          <tr><td class="topic">始業式 · 洞見 AI 大未來</td><td class="hours">2h</td>
+            <td class="faculty">開場致詞 工研院 張培仁院長 / 周怡君執行長<br>緯穎 洪麗甯董事長 / 鴻海 劉揚偉董事長 / 中華電信 簡志誠董事長</td></tr>
+          <tr><td class="topic">國際政經局勢與供應鏈重塑</td><td class="hours">3h</td>
+            <td class="faculty">臺灣大學 陳添枝 名譽教授</td></tr>
+
+          <tr class="mod-row"><td colspan="3"><span class="mn">2</span>驅動創新　Drive Innovation</td></tr>
+          <tr><td class="topic">全球科技競局下我國產業機會與挑戰</td><td class="hours">3h</td>
+            <td class="faculty">國科會 吳誠文 主委 + 工研院 吳志毅 資深專家</td></tr>
+          <tr><td class="topic">智慧機器人 — 轉型關鍵與創新應用</td><td class="hours">3h</td>
+            <td class="faculty">達明機器人 黃識忠 營運長 (備 / 研華)</td></tr>
+          <tr><td class="topic">AI 生態系與創投佈局 ROI</td><td class="hours">3h</td>
+            <td class="faculty">台灣大哥大 林之晨 總經理 / 創新工業技術移轉(股)公司 瞿志豪 董事</td></tr>
+
+          <tr class="mod-row"><td colspan="3"><span class="mn">3</span>領導布局　Lead the Future</td></tr>
+          <tr><td class="topic">洞悉客戶價值與跨域思維</td><td class="hours">3h</td>
+            <td class="faculty">清華大學 金聯舫 榮譽講座教授</td></tr>
+          <tr><td class="topic">AI 治理與技術策略新藍圖</td><td class="hours">3h</td>
+            <td class="faculty">台達研究院 闕志克 院長 / 台達 郭大偉 技術長</td></tr>
+          <tr><td class="topic">企業轉型再成長</td><td class="hours">6h</td>
+            <td class="faculty">誠致教育基金會 李吉仁 董事長</td></tr>
+
+          <tr class="mod-row"><td colspan="3"><span class="mn">4</span>超速決策　Decide Faster</td></tr>
+          <tr><td class="topic">代理型 AI 部署與 Claude Code 敏捷決策實作</td><td class="hours">3h</td>
+            <td class="faculty">AWS Hero 蔣鐙緯 · PAFERS Tech 產品科技整合總監</td></tr>
+          <tr><td class="topic">商業策略模擬實戰</td><td class="hours">8h</td>
+            <td class="faculty">BTS Patrick Fei 執行副總裁 · 周惠娟 Taiwan 總經理</td></tr>
+          <tr><td class="topic">創新經營與決策路徑 (分組專題研討)</td><td class="hours">3h</td>
+            <td class="faculty">長庚大學管理研究所 于卓民 所長</td></tr>
+          <tr><td class="topic">分組專題討論與發表 · 結業式</td><td class="hours">8h</td>
+            <td class="faculty">主持 周怡君 執行長<br>指導專家群 史欽泰董事長、徐爵民部長、羅達賢特聘專家、于卓民所長</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule" id="schedule">
+  <div class="container">
+    <div class="section-label"><span class="ord">IV</span>Weekly Schedule</div>
+    <h2 class="section-title">七週課程表 · <em>Friday Series</em></h2>
+    <p class="section-sub">每週五於臺北上課，9/11 溫書假。上、下午各一主題並結合分組專題演進。</p>
+
+    <div class="weeks">
+
+      <div class="week">
+        <div class="week-no">Week I.</div>
+        <div class="week-date">7/31 五</div>
+        <div class="week-tag">開課 · 始業式</div>
+        <div class="week-divider"></div>
+        <div class="slot">
+          <div class="slot-label">AM</div>
+          <div class="slot-topic">洞見 AI 大未來</div>
+          <div class="slot-spk">張院長｜周執行長｜洪麗甯董事長</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">PM</div>
+          <div class="slot-topic">國際政經局勢與供應鏈重塑</div>
+          <div class="slot-spk">陳添枝 臺大名譽教授</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">Project</div>
+          <div class="slot-topic">分組專題說明</div>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="week-no">Week II.</div>
+        <div class="week-date">8/07 五</div>
+        <div class="week-tag">產業競局</div>
+        <div class="week-divider"></div>
+        <div class="slot">
+          <div class="slot-label">AM</div>
+          <div class="slot-topic">全球科技競局下我國產業機會與挑戰</div>
+          <div class="slot-spk">吳誠文主委<br>吳志毅資深專家</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">PM</div>
+          <div class="slot-topic">創新經營與決策路徑</div>
+          <div class="slot-spk">于卓民 長庚大學所長</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">Project</div>
+          <div class="slot-topic">分組專題研討</div>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="week-no">Week III.</div>
+        <div class="week-date">8/14 五</div>
+        <div class="week-tag">客戶與 AI 實作</div>
+        <div class="week-divider"></div>
+        <div class="slot">
+          <div class="slot-label">AM</div>
+          <div class="slot-topic">洞悉客戶價值與跨域思維</div>
+          <div class="slot-spk">金聯舫<br>清大榮譽講座教授</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">PM</div>
+          <div class="slot-topic">代理型 AI 部署與 Claude Code 敏捷決策實作</div>
+          <div class="slot-spk">蔣鐙緯<br>產品科技整合總監</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">Project</div>
+          <div class="slot-topic">分組討論</div>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="week-no">Week IV.</div>
+        <div class="week-date">8/21 五</div>
+        <div class="week-tag">策略模擬 (上)</div>
+        <div class="week-divider"></div>
+        <div class="slot">
+          <div class="slot-label">FULL DAY</div>
+          <div class="slot-topic">商業策略模擬實戰</div>
+          <div class="slot-spk">Patrick Fei · 周惠娟<br>BTS TW 執行團隊</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">Project</div>
+          <div class="slot-topic">繳交分組報告架構</div>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="week-no">Week V.</div>
+        <div class="week-date">8/28 五</div>
+        <div class="week-tag">轉型再成長</div>
+        <div class="week-divider"></div>
+        <div class="slot">
+          <div class="slot-label">FULL DAY</div>
+          <div class="slot-topic">企業轉型再成長</div>
+          <div class="slot-spk">李吉仁<br>誠致教育董事長</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">Project</div>
+          <div class="slot-topic">報告反饋討論</div>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="week-no">Week VI.</div>
+        <div class="week-date">9/04 五</div>
+        <div class="week-tag">技術藍圖</div>
+        <div class="week-divider"></div>
+        <div class="slot">
+          <div class="slot-label">AM</div>
+          <div class="slot-topic">AI 治理與技術策略新藍圖</div>
+          <div class="slot-spk">闕志克<br>台達研究院院長</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">PM</div>
+          <div class="slot-topic">智慧機器人 — 轉型關鍵與創新應用</div>
+          <div class="slot-spk">黃識忠<br>達明機器人營運長</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">Project</div>
+          <div class="slot-topic">分組討論</div>
+        </div>
+      </div>
+
+      <div class="week">
+        <div class="week-no">Week VII.</div>
+        <div class="week-date">9/18 五</div>
+        <div class="week-tag">結業式</div>
+        <div class="week-divider"></div>
+        <div class="slot">
+          <div class="slot-label">AM</div>
+          <div class="slot-topic">AI 生態系與創投佈局 ROI</div>
+          <div class="slot-spk">林之晨<br>台灣大哥大總經理</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">PM</div>
+          <div class="slot-topic">期末分組發表 + 結業式</div>
+          <div class="slot-spk">專家群 4 位<br>史欽泰｜徐爵民<br>羅達賢｜于卓民</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section class="speakers" id="speakers">
+  <div class="container">
+    <div class="section-label"><span class="ord">V</span>Distinguished Faculty</div>
+    <h2 class="section-title">講師陣容 · <em>The Conveners</em></h2>
+    <p class="section-sub">由產業領袖、學界泰斗與國際顧問共同組成的師資群，呈現多元跨域的高度。</p>
+
+    <div class="spk-grid">
+      <div class="spk"><div class="spk-name">張培仁　院長</div><div class="spk-role">工業技術研究院</div></div>
+      <div class="spk"><div class="spk-name">周怡君　執行長</div><div class="spk-role">工研院 / 課程主持人</div></div>
+      <div class="spk"><div class="spk-name">劉揚偉　董事長</div><div class="spk-role">鴻海科技集團</div></div>
+      <div class="spk"><div class="spk-name">洪麗甯　董事長</div><div class="spk-role">緯穎科技</div></div>
+      <div class="spk"><div class="spk-name">簡志誠　董事長</div><div class="spk-role">中華電信</div></div>
+      <div class="spk"><div class="spk-name">陳添枝　名譽教授</div><div class="spk-role">國立臺灣大學</div></div>
+      <div class="spk"><div class="spk-name">吳誠文　主任委員</div><div class="spk-role">國家科學及技術委員會</div></div>
+      <div class="spk"><div class="spk-name">吳志毅　資深專家</div><div class="spk-role">工業技術研究院</div></div>
+      <div class="spk"><div class="spk-name">黃識忠　營運長</div><div class="spk-role">達明機器人</div></div>
+      <div class="spk"><div class="spk-name">林之晨　總經理</div><div class="spk-role">台灣大哥大</div></div>
+      <div class="spk"><div class="spk-name">瞿志豪　董事</div><div class="spk-role">創新工業技術移轉(股)</div></div>
+      <div class="spk"><div class="spk-name">金聯舫　榮譽講座教授</div><div class="spk-role">國立清華大學</div></div>
+      <div class="spk"><div class="spk-name">闕志克　院長</div><div class="spk-role">台達研究院</div></div>
+      <div class="spk"><div class="spk-name">郭大偉　技術長</div><div class="spk-role">台達電子</div></div>
+      <div class="spk"><div class="spk-name">李吉仁　董事長</div><div class="spk-role">誠致教育基金會</div></div>
+      <div class="spk"><div class="spk-name">Patrick Fei　EVP</div><div class="spk-role">BTS Global</div></div>
+      <div class="spk"><div class="spk-name">周惠娟　Taiwan 總經理</div><div class="spk-role">BTS Taiwan</div></div>
+      <div class="spk"><div class="spk-name">蔣鐙緯　產品科技整合總監</div><div class="spk-role">PAFERS Tech · AWS Hero</div></div>
+      <div class="spk"><div class="spk-name">于卓民　所長</div><div class="spk-role">長庚大學管理研究所</div></div>
+      <div class="spk spk-panel">
+        <div class="spk-panel-tag">Closing Panel</div>
+        <div class="spk-name">史欽泰　董事長</div>
+        <div class="spk-name">徐爵民　部長</div>
+        <div class="spk-name">羅達賢　特聘專家</div>
+        <div class="spk-role">結業式指導專家群</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-label"><span class="ord">VI</span>Investment</div>
+    <h2 class="section-title">報名方案 · <em>2026 Pricing</em></h2>
+    <p class="section-sub">邀請審查制，全班限 30 人。提供完整課程方案與單堂 CXO 體驗方案。</p>
+
+    <div class="price-grid">
+
+      <div class="price-main">
+        <h3>完整課程方案</h3>
+        <div class="sub">FULL PROGRAMME · 48 hrs / 7 weeks</div>
+
+        <div class="price-tier">
+          <div>
+            <div class="pname">定價</div>
+            <div class="pdesc">Standard</div>
+          </div>
+          <div class="pamt"><span class="cur">NT$</span>99,000</div>
+        </div>
+        <div class="price-tier">
+          <div>
+            <div class="pname">早鳥價</div>
+            <div class="pdesc">課前一個月報名並錄取</div>
+          </div>
+          <div class="pamt"><span class="cur">NT$</span>94,000</div>
+        </div>
+        <div class="price-tier">
+          <div>
+            <div class="pname">學長姐推薦 VIP</div>
+            <div class="pdesc">舊學員推薦專屬</div>
+          </div>
+          <div class="pamt"><span class="cur">NT$</span>90,000</div>
+        </div>
+        <div class="price-tier">
+          <div>
+            <div class="pname">院內學員專屬</div>
+            <div class="pdesc">工研院內部優惠</div>
+          </div>
+          <div class="pamt"><span class="cur">NT$</span>65,000</div>
+        </div>
+
+        <div class="price-cta">
+          <span class="note">邀請審查制 · 三個工作天內回覆</span>
+          <a class="btn-apply" href="https://itricollege.surveycake.biz/s/eLnkX" target="_blank" rel="noopener">
+            立即報名 <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cxo-box">
+        <h3>CXO 單堂方案</h3>
+        <div class="sub">Executive Single-Session</div>
+
+        <div class="cxo-item">
+          <div class="cxo-num">01</div>
+          <div>
+            <div class="title">商業策略模擬實戰</div>
+            <div class="dur">一日 · BTS</div>
+          </div>
+          <div class="amt">NT$ 15,000</div>
+        </div>
+        <div class="cxo-item">
+          <div class="cxo-num">02</div>
+          <div>
+            <div class="title">企業轉型再成長</div>
+            <div class="dur">一日 · 李吉仁董事長</div>
+          </div>
+          <div class="amt">NT$ 12,000</div>
+        </div>
+        <div class="cxo-item">
+          <div class="cxo-num">03</div>
+          <div>
+            <div class="title">代理型 AI 部署與 Claude Code 敏捷決策實作</div>
+            <div class="dur">3 小時</div>
+          </div>
+          <div class="amt">NT$ 5,800</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="badge">Class of 2026 · Cohort XIII</div>
+    <div class="ft-title">科技產業經營高階主管研習班</div>
+    <div class="ft-tagline">— Lead the Industry. Shape the Future. —</div>
+  </div>
+
+  <div class="ft-cols">
+    <div class="ft-col">
+      <h4>報名洽詢</h4>
+      <div class="row"><strong>謝小姐</strong></div>
+      <div class="row">電話 · <a href="tel:+886035918313">03-591-8313</a></div>
+      <div class="row">信箱 · <a href="/cdn-cgi/l/email-protection#caaba6a6a3b9a5a4a2b9a3afa28aa3beb8a3e4a5b8ade4bebd"><span class="__cf_email__" data-cfemail="97f6fbfbfee4f8f9ffe4fef2ffd7fee3e5feb9f8e5f0b9e3e0">[email&#160;protected]</span></a></div>
+      <div class="row"><a href="https://itricollege.surveycake.biz/s/eLnkX" target="_blank" rel="noopener">線上報名表 →</a></div>
+    </div>
+
+    <div class="ft-col">
+      <h4>主辦單位</h4>
+      <div class="row"><strong>工研院 產業學院</strong></div>
+      <div class="row">臺北學習中心 · BR6 電腦教室</div>
+    </div>
+
+    <div class="ft-col">
+      <h4>關於本期</h4>
+      <div class="row">2026 / 07 / 31 — 09 / 18</div>
+      <div class="row">7 週 · 48 小時 · 12 門主題</div>
+      <div class="row">邀請審查制 · 限 30 人</div>
+      <div class="row">早鳥報名截止 · 2026 / 06 / 30</div>
+    </div>
+  </div>
+
+  <div class="ft-bottom">
+    <span>© 2026 工研院 產業學院 · ITRI · All rights reserved.</span>
+    <span class="right" style="white-space:nowrap">v17 · 2026 / 05 / 14</span>
+  </div>
+</footer>
+
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
