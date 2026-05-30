@@ -53,7 +53,8 @@
     pointer-events:none;
   }
   .hero::after{
-    content:"AI";
+    content:none;
+    display:none;
     position:absolute;
     right:-4vw;bottom:-14vw;
     font-family:'Cormorant Garamond',serif;
@@ -64,6 +65,8 @@
     letter-spacing:-0.04em;
   }
   .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
+  /* flowing gold particle light-wave behind hero content */
+  .hero-wave{position:absolute;inset:0;z-index:1;pointer-events:none}
   .crest{
     display:flex;align-items:center;gap:14px;
     margin-bottom:40px;
@@ -452,12 +455,13 @@
     table-layout:fixed;
   }
   table.cur th{
-    background:var(--ink);color:var(--gold-soft);
+    background:var(--ink-2);color:var(--gold-soft);
     text-align:left;
-    padding:20px 22px;
+    padding:18px 22px;
     font-size:13px;letter-spacing:.28em;
     text-transform:uppercase;
     font-weight:500;
+    border-bottom:2px solid var(--gold);
   }
   table.cur td{
     padding:18px 22px;
@@ -467,14 +471,15 @@
     line-height:1.6;
   }
   table.cur tr.mod-row td{
-    background:var(--ink);
+    background:var(--ink-3);
     font-weight:700;
     color:#fff;
     font-family:'Noto Serif TC',serif;
     letter-spacing:.06em;
     font-size:18px;
-    padding:22px 22px;
+    padding:18px 22px;
     border-left:4px solid var(--gold);
+    border-top:1px solid rgba(201,169,97,.30);
   }
   table.cur tr.mod-row td .mn{
     display:inline-block;
@@ -579,7 +584,8 @@
     overflow:hidden;
   }
   .speakers::before{
-    content:"FACULTY";
+    content:none;
+    display:none;
     position:absolute;
     top:40px;right:8vw;
     font-family:'Cormorant Garamond',serif;
@@ -768,7 +774,7 @@
   footer{
     background:#140628;
     color:rgba(245,241,232,.6);
-    padding:70px 8vw 36px;
+    padding:40px 8vw 36px;
     border-top:1px solid var(--line);
   }
   .ft-top{
@@ -805,7 +811,7 @@
   }
   .ft-col h4{
     font-family:'Inter',sans-serif;
-    font-size:11px;font-weight:600;letter-spacing:.4em;
+    font-size:12px;font-weight:600;letter-spacing:.4em;
     color:var(--gold);
     text-transform:uppercase;
     margin-bottom:18px;
@@ -813,8 +819,8 @@
     border-bottom:1px solid rgba(201,169,97,.18);
   }
   .ft-col .row{
-    margin-bottom:10px;
-    font-size:13.5px;
+    margin-bottom:12px;
+    font-size:15px;
     line-height:1.7;
     color:rgba(245,241,232,.72);
   }
@@ -983,19 +989,20 @@
 
 <!-- HERO -->
 <header class="hero">
+  <canvas class="hero-wave" id="heroWave"></canvas>
   <div class="hero-inner">
     <div class="session-no" style="display:none">
       <span class="num">13</span>
       <span class="label">—&nbsp; Thirteenth Cohort &nbsp;2026</span>
     </div>
 
-    <h1 class="title">
+    <h1 class="title" style="text-align: left">
       科技產業經營<br>
       高階主管研習班 <span class="title-deco">第<em>13</em>期</span>
     </h1>
-    <div class="subtitle"><em>AI</em> 盛世下的致勝之道</div>
+    <div class="subtitle" style="text-align: left; height: 76px; width: 1156px"><em>AI</em> 盛世下的致勝之道</div>
 
-    <p class="lead">
+    <p class="lead" style="width: 760px; text-align: left; margin: 0px">
       從政經局勢、科技創新、到高階決策思維，打造科技產業領導者的全局經營力。<br>
       課程專為面對 AI 驅動全球產業版圖重組的企業領導者所設計，<br>
       使經營心法從傳統經驗導向，調適為可持續升級的「策略思維與決策系統」。
@@ -1134,42 +1141,42 @@
       <table class="cur">
         <thead>
           <tr>
-            <th style="width:42%">課程主題</th>
-            <th style="width:14%;white-space:nowrap">時數</th>
-            <th style="width:44%">師資安排</th>
+            <th style="width: 42%; font-size: 20px; text-align: left">課程主題</th>
+            <th style="width: 14%; white-space: nowrap; font-size: 20px; text-align: center">時數</th>
+            <th style="width: 44%; font-size: 20px; text-align: center">師資安排</th>
           </tr>
         </thead>
         <tbody>
           <tr class="mod-row"><td colspan="3"><span class="mn">1</span>洞悉變局　Sense the Shift</td></tr>
-          <tr><td class="topic">始業式 · 洞見 AI 大未來</td><td class="hours">2h</td>
+          <tr><td class="topic">始業式 · 洞見 AI 大未來</td><td class="hours" style="text-align: center">2h</td>
             <td class="faculty">開場致詞 工研院 張培仁院長 / 周怡君執行長<br>緯穎 洪麗甯董事長 / 鴻海 劉揚偉董事長 / 中華電信 簡志誠董事長</td></tr>
-          <tr><td class="topic">國際政經局勢與供應鏈重塑</td><td class="hours">3h</td>
+          <tr><td class="topic">國際政經局勢與供應鏈重塑</td><td class="hours" style="text-align: center">3h</td>
             <td class="faculty">臺灣大學 陳添枝 名譽教授</td></tr>
 
           <tr class="mod-row"><td colspan="3"><span class="mn">2</span>驅動創新　Drive Innovation</td></tr>
-          <tr><td class="topic">全球科技競局下我國產業機會與挑戰</td><td class="hours">3h</td>
+          <tr><td class="topic">全球科技競局下我國產業機會與挑戰</td><td class="hours" style="text-align: center">3h</td>
             <td class="faculty">國科會 吳誠文 主委 + 工研院 吳志毅 資深專家</td></tr>
-          <tr><td class="topic">智慧機器人 — 轉型關鍵與創新應用</td><td class="hours">3h</td>
+          <tr><td class="topic">智慧機器人 — 轉型關鍵與創新應用</td><td class="hours" style="text-align: center">3h</td>
             <td class="faculty">達明機器人 黃識忠 營運長 (備 / 研華)</td></tr>
-          <tr><td class="topic">AI 生態系與創投佈局 ROI</td><td class="hours">3h</td>
+          <tr><td class="topic">AI 生態系與創投佈局 ROI</td><td class="hours" style="text-align: center">3h</td>
             <td class="faculty">台灣大哥大 林之晨 總經理 / 創新工業技術移轉(股)公司 瞿志豪 董事</td></tr>
 
           <tr class="mod-row"><td colspan="3"><span class="mn">3</span>領導布局　Lead the Future</td></tr>
-          <tr><td class="topic">洞悉客戶價值與跨域思維</td><td class="hours">3h</td>
+          <tr><td class="topic">洞悉客戶價值與跨域思維</td><td class="hours" style="text-align: center">3h</td>
             <td class="faculty">清華大學 金聯舫 榮譽講座教授</td></tr>
-          <tr><td class="topic">AI 治理與技術策略新藍圖</td><td class="hours">3h</td>
+          <tr><td class="topic">AI 治理與技術策略新藍圖</td><td class="hours" style="text-align: center">3h</td>
             <td class="faculty">台達研究院 闕志克 院長 / 台達 郭大偉 技術長</td></tr>
-          <tr><td class="topic">企業轉型再成長</td><td class="hours">6h</td>
+          <tr><td class="topic">企業轉型再成長</td><td class="hours" style="text-align: center">6h</td>
             <td class="faculty">誠致教育基金會 李吉仁 董事長</td></tr>
 
           <tr class="mod-row"><td colspan="3"><span class="mn">4</span>超速決策　Decide Faster</td></tr>
-          <tr><td class="topic">代理型 AI 部署與 Claude Code 敏捷決策實作</td><td class="hours">3h</td>
+          <tr><td class="topic">代理型 AI 部署與 Claude Code 敏捷決策實作</td><td class="hours" style="text-align: center">3h</td>
             <td class="faculty">AWS Hero 蔣鐙緯 · PAFERS Tech 產品科技整合總監</td></tr>
-          <tr><td class="topic">商業策略模擬實戰</td><td class="hours">8h</td>
+          <tr><td class="topic">商業策略模擬實戰</td><td class="hours" style="text-align: center">8h</td>
             <td class="faculty">BTS Patrick Fei 執行副總裁 · 周惠娟 Taiwan 總經理</td></tr>
-          <tr><td class="topic">創新經營與決策路徑 (分組專題研討)</td><td class="hours">3h</td>
+          <tr><td class="topic">創新經營與決策路徑 (分組專題研討)</td><td class="hours" style="text-align: center">3h</td>
             <td class="faculty">長庚大學管理研究所 于卓民 所長</td></tr>
-          <tr><td class="topic">分組專題討論與發表 · 結業式</td><td class="hours">8h</td>
+          <tr><td class="topic">分組專題討論與發表 · 結業式</td><td class="hours" style="text-align: center">8h</td>
             <td class="faculty">主持 周怡君 執行長<br>指導專家群 史欽泰董事長、徐爵民部長、羅達賢特聘專家、于卓民所長</td></tr>
         </tbody>
       </table>
@@ -1448,29 +1455,23 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="ft-top">
-    <div class="badge">Class of 2026 · Cohort XIII</div>
-    <div class="ft-title">科技產業經營高階主管研習班</div>
-    <div class="ft-tagline">— Lead the Industry. Shape the Future. —</div>
-  </div>
-
-  <div class="ft-cols">
+  <div class="ft-cols" style="height: 289px; padding: 38px 0px 36px">
     <div class="ft-col">
-      <h4>報名洽詢</h4>
+      <h4 style="font-size: 20px">報名洽詢</h4>
       <div class="row"><strong>謝小姐</strong></div>
       <div class="row">電話 · <a href="tel:+886035918313">03-591-8313</a></div>
-      <div class="row">信箱 · <a href="/cdn-cgi/l/email-protection#caaba6a6a3b9a5a4a2b9a3afa28aa3beb8a3e4a5b8ade4bebd"><span class="__cf_email__" data-cfemail="97f6fbfbfee4f8f9ffe4fef2ffd7fee3e5feb9f8e5f0b9e3e0">[email&#160;protected]</span></a></div>
+      <div class="row">信箱 · <a href="/cdn-cgi/l/email-protection#f2939e9e9b819d9c9a819b979ab29b86809bdc9d8095dc8685"><span class="__cf_email__" data-cfemail="d5b4b9b9bca6babbbda6bcb0bd95bca1a7bcfbbaa7b2fba1a2">[email&#160;protected]</span></a></div>
       <div class="row"><a href="https://itricollege.surveycake.biz/s/eLnkX" target="_blank" rel="noopener">線上報名表 →</a></div>
     </div>
 
     <div class="ft-col">
-      <h4>主辦單位</h4>
+      <h4 style="font-size: 20px">主辦單位</h4>
       <div class="row"><strong>工研院 產業學院</strong></div>
       <div class="row">臺北學習中心 · BR6 電腦教室</div>
     </div>
 
     <div class="ft-col">
-      <h4>關於本期</h4>
+      <h4 style="font-size: 20px">關於本期</h4>
       <div class="row">2026 / 07 / 31 — 09 / 18</div>
       <div class="row">7 週 · 48 小時 · 12 門主題</div>
       <div class="row">邀請審查制 · 限 30 人</div>
@@ -1480,10 +1481,82 @@
 
   <div class="ft-bottom">
     <span>© 2026 工研院 產業學院 · ITRI · All rights reserved.</span>
-    <span class="right" style="white-space:nowrap">v17 · 2026 / 05 / 14</span>
+    <span class="right" style="white-space:nowrap">
+</span>
   </div>
 </footer>
 
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  const hero=document.querySelector('.hero');
+  const cv=document.getElementById('heroWave');
+  if(!hero||!cv)return;
+  const ctx=cv.getContext('2d');
+  const GOLD=['#f6e3a0','#eccb6f','#d9b257','#c79a45','#b9863a'];
+  let W=0,H=0,parts=[],raf=0;
+
+  function build(){
+    W=hero.clientWidth;H=hero.clientHeight;
+    cv.width=W;cv.height=H;
+    const N=Math.round(W*0.27);          // sparser, ambient field
+    parts=[];
+    for(let i=0;i<N;i++){
+      parts.push({
+        x:Math.random()*W,
+        y:Math.random()*H,               // spread across the whole banner
+        r:Math.random()*1.4+0.4,
+        sp:0.06+Math.random()*0.32,      // slow horizontal drift
+        bob:6+Math.random()*22,
+        bf:0.4+Math.random()*0.9,
+        c:GOLD[(Math.random()*GOLD.length)|0],
+        tw:Math.random()*Math.PI*2,
+        base:0.11+Math.random()*0.32     // dim base brightness
+      });
+    }
+  }
+  // faint broad background waves spanning the whole banner
+  function bgWaveY(x,t,k){const m=H*(0.46+k*0.17);return m+H*0.15*Math.sin(x/430+t*0.8+k*1.4)+H*0.05*Math.sin(x/180+t*1.1+k);}
+
+  let t=0;
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    ctx.globalCompositeOperation='lighter';
+    // three very faint broad waves — background structure across the banner
+    for(let k=0;k<3;k++){
+      ctx.save();
+      ctx.lineWidth=1.4;ctx.shadowBlur=15;ctx.shadowColor='rgba(235,195,105,.5)';
+      ctx.globalAlpha=0.085;
+      const g=ctx.createLinearGradient(0,0,W,0);
+      g.addColorStop(0,'rgba(220,180,90,0)');g.addColorStop(.5,'rgba(245,220,150,1)');g.addColorStop(1,'rgba(220,180,90,0)');
+      ctx.strokeStyle=g;ctx.beginPath();
+      for(let x=0;x<=W;x+=10){const y=bgWaveY(x,t,k);x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
+      ctx.stroke();ctx.restore();
+    }
+    // ambient sparse particles across the whole banner
+    for(const p of parts){
+      p.x+=p.sp;if(p.x>W+6)p.x=-6;p.tw+=0.02*p.bf;
+      const y=p.y+p.bob*Math.sin(p.tw);
+      const tw=0.5+0.5*Math.sin(p.tw);
+      const a=p.base*(0.45+0.55*tw);
+      ctx.globalAlpha=a;ctx.fillStyle=p.c;
+      if(p.r>1.0&&tw>0.7){ctx.shadowBlur=8;ctx.shadowColor='rgba(245,205,110,.8)';}else ctx.shadowBlur=0;
+      ctx.beginPath();ctx.arc(p.x,y,p.r,0,7);ctx.fill();
+    }
+    ctx.shadowBlur=0;ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
+    t+=0.006;raf=requestAnimationFrame(frame);
+  }
+
+  let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(build,150);});
+  build();frame();
+  // pause when hero scrolled out of view
+  if('IntersectionObserver'in window){
+    new IntersectionObserver((es)=>{es.forEach(e=>{
+      if(e.isIntersecting){if(!raf)raf=requestAnimationFrame(frame);}
+      else{cancelAnimationFrame(raf);raf=0;}
+    });},{threshold:0}).observe(hero);
+  }
+})();
+</script>
+</body></html>
