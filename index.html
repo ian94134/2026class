@@ -1,6 +1,4 @@
 <!DOCTYPE html><html lang="zh-Hant"><head>
-
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>科技產業經營高階主管研習班 第十三期 | AI盛世下的致勝之道</title>
@@ -51,18 +49,6 @@
     background-size:60px 60px;
     mask-image:radial-gradient(ellipse at center, black 30%, transparent 75%);
     pointer-events:none;
-  }
-  .hero::after{
-    content:none;
-    display:none;
-    position:absolute;
-    right:-4vw;bottom:-14vw;
-    font-family:'Cormorant Garamond',serif;
-    font-style:italic;font-weight:600;
-    font-size:38vw;line-height:.8;
-    color:rgba(201,169,97,.055);
-    pointer-events:none;
-    letter-spacing:-0.04em;
   }
   .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
   /* flowing gold particle light-wave behind hero content */
@@ -145,12 +131,35 @@
     color:var(--gold-soft);
     margin:0 .12em;
   }
+  .lead-block{
+    margin-top:44px;
+    max-width:840px;
+    padding-left:26px;
+    border-left:2px solid rgba(201,169,97,.5);
+  }
   .lead{
-    margin-top:48px;
-    max-width:760px;
     font-size:17px;font-weight:400;
     color:rgba(245,241,232,.88);
     line-height:1.95;
+  }
+  .lead-1{
+    font-size:clamp(19px,1.55vw,22px);
+    color:#fff;font-weight:400;
+    line-height:1.9;
+    margin-bottom:18px;
+  }
+  .lead-1 strong{color:var(--gold-soft);font-weight:600}
+  .lead-1 em{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:700;
+    color:var(--gold);
+    font-size:1.1em;margin:0 .08em;
+  }
+  .lead-2{
+    font-size:17px;
+    color:rgba(245,241,232,.72);
+    line-height:1.95;
+    font-weight:300;
   }
 
   .meta-row{
@@ -162,7 +171,7 @@
     border-bottom:1px solid var(--line);
   }
   .meta-cell{
-    padding:22px 24px;
+    padding:24px 26px;
     border-right:1px solid var(--line);
   }
   .meta-cell:last-child{border-right:none}
@@ -170,13 +179,21 @@
     font-size:11px;letter-spacing:.28em;
     color:var(--gold);
     text-transform:uppercase;
-    margin-bottom:8px;
+    margin-bottom:12px;
   }
   .meta-cell .v{
     font-family:'Noto Serif TC',serif;
-    font-size:18px;color:#fff;font-weight:500;
+    font-size:19px;color:#fff;font-weight:500;
+    line-height:1.4;
   }
-  .meta-cell .v .small{font-size:13px;color:var(--gold-soft);display:block;margin-top:2px;font-weight:300;font-family:'Noto Sans TC',sans-serif}
+  .meta-cell .v .hl{color:var(--gold)}
+  .meta-cell .v .small{
+    font-size:13px;color:var(--gold-soft);
+    display:block;margin-top:7px;
+    font-weight:300;line-height:1.5;
+    letter-spacing:.02em;
+    font-family:'Noto Sans TC',sans-serif;
+  }
 
   .organizer{
     margin-top:48px;
@@ -299,8 +316,9 @@
   }
   .section-sub{
     color:var(--text);
-    font-size:16px;font-weight:400;
-    max-width:720px;
+    font-size:17px;font-weight:400;
+    line-height:1.8;
+    max-width:760px;
     margin-bottom:60px;
   }
 
@@ -309,15 +327,13 @@
     background:linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
     position:relative;
   }
-  .obj-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:60px;
-    align-items:start;
-  }
   .obj-text{
-    font-size:16px;line-height:1.95;color:var(--text);
+    font-size:17px;line-height:2;color:var(--text);
     font-weight:400;
+    max-width:920px;
   }
-  .obj-text p{margin-bottom:18px}
+  .obj-text p{margin-bottom:20px}
+  .obj-text p:last-child{margin-bottom:0}
   .obj-text strong{color:var(--ink);font-weight:600}
   .obj-quote{
     position:relative;
@@ -423,8 +439,8 @@
     margin-bottom:24px;
   }
   .module-desc{
-    font-size:14px;color:rgba(245,241,232,.82);
-    line-height:1.8;font-weight:400;
+    font-size:15px;color:rgba(245,241,232,.85);
+    line-height:1.85;font-weight:400;
   }
   .module-tag{
     display:inline-block;
@@ -536,7 +552,7 @@
   }
   .week-tag{
     margin-top:8px;
-    font-size:11px;letter-spacing:.2em;
+    font-size:12px;letter-spacing:.2em;
     color:var(--gold-deep);
     text-transform:uppercase;
     font-weight:600;
@@ -551,16 +567,16 @@
     font-size:11px;letter-spacing:.22em;
     color:var(--gold-deep);
     text-transform:uppercase;
-    margin-bottom:5px;
+    margin-bottom:6px;
     font-weight:700;
   }
   .slot-topic{
-    font-size:15px;color:var(--ink);
-    font-weight:500;line-height:1.5;
+    font-size:15.5px;color:var(--ink);
+    font-weight:500;line-height:1.55;
   }
   .slot-spk{
-    font-size:13px;color:var(--text-soft);
-    margin-top:4px;line-height:1.5;
+    font-size:13.5px;color:var(--text-soft);
+    margin-top:5px;line-height:1.6;
   }
 
   .note-box{
@@ -582,18 +598,6 @@
     color:var(--cream);
     position:relative;
     overflow:hidden;
-  }
-  .speakers::before{
-    content:none;
-    display:none;
-    position:absolute;
-    top:40px;right:8vw;
-    font-family:'Cormorant Garamond',serif;
-    font-style:italic;
-    font-size:14vw;
-    color:rgba(201,169,97,.04);
-    pointer-events:none;
-    letter-spacing:-.02em;
   }
   .speakers .section-label{color:var(--gold)}
   .speakers .section-title{color:#fff}
@@ -621,44 +625,291 @@
     margin-bottom:6px;
   }
   .spk-role{
-    font-size:14px;color:var(--gold-soft);
-    line-height:1.6;
+    font-size:14.5px;color:var(--gold-soft);
+    line-height:1.65;
   }
-  /* Closing panel — trio card */
+  /* Closing panel — full-width banner trio */
   .spk-panel{
-    display:flex;flex-direction:column;
+    grid-column:1 / -1;
+    display:flex;flex-direction:row;align-items:center;
+    gap:0;
+    padding:30px 36px;
     background:
-      linear-gradient(180deg, rgba(201,169,97,.05) 0%, transparent 60%),
+      linear-gradient(180deg, rgba(201,169,97,.06) 0%, transparent 70%),
       var(--ink-2);
   }
   .spk-panel .spk-panel-tag{
     font-family:'Cormorant Garamond',serif;
     font-style:italic;font-weight:600;
-    font-size:14px;
+    font-size:20px;
     color:var(--gold);
-    letter-spacing:.04em;
-    padding-bottom:14px;
-    margin-bottom:14px;
-    border-bottom:1px solid rgba(201,169,97,.32);
+    letter-spacing:.02em;
+    white-space:nowrap;
+    padding-right:36px;margin-right:36px;
+    border-right:1px solid rgba(201,169,97,.32);
   }
-  .spk-panel .spk-name{
-    font-size:16px;
-    line-height:1.45;
-    margin-bottom:10px;
-    padding-bottom:10px;
-    border-bottom:1px dashed rgba(201,169,97,.18);
+  .spk-panel-names{
+    display:flex;flex:1;
   }
-  .spk-panel .spk-name:nth-last-of-type(1){
-    border-bottom:none;
-    margin-bottom:14px;
+  .spk-panel .spk-panel-names .spk-name{
+    flex:1;
+    font-size:19px;
+    margin-bottom:0;padding:0 28px;
+    border-right:1px dashed rgba(201,169,97,.20);
   }
+  .spk-panel .spk-panel-names .spk-name:first-child{padding-left:0}
+  .spk-panel .spk-panel-names .spk-name:last-child{border-right:none}
   .spk-panel .spk-role{
-    margin-top:auto;
+    margin:0 0 0 36px;
+    white-space:nowrap;
     font-size:12px;
     letter-spacing:.22em;
     text-transform:uppercase;
     color:var(--gold);
   }
+
+  /* ===== CXO CLUB ===== */
+  .cxo{
+    background:linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+    position:relative;overflow:hidden;
+  }
+  .cxo-head{text-align:center;max-width:780px;margin:0 auto}
+  .cxo-head .section-label{justify-content:center}
+  .cxo-head .section-title{margin-top:6px}
+  .cxo-head .section-sub{margin-left:auto;margin-right:auto}
+
+  .cxo-circles{
+    display:flex;justify-content:center;align-items:center;
+    margin-top:60px;
+  }
+  .cxo-circle{
+    width:clamp(230px,23vw,312px);height:clamp(230px,23vw,312px);
+    flex:0 0 auto;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:radial-gradient(circle at 50% 42%, rgba(201,169,97,.12), rgba(255,255,255,.55) 72%);
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;padding:0 clamp(30px,3.4vw,52px);
+    position:relative;
+  }
+  .cxo-circle + .cxo-circle{margin-left:-46px}
+  .cxo-circle.is-mid{
+    z-index:2;
+    background:radial-gradient(circle at 50% 42%, rgba(201,169,97,.26), rgba(255,255,255,.5) 74%);
+    border-color:var(--gold);
+  }
+  .cxo-circle .cc-h{
+    font-family:'Noto Serif TC',serif;
+    font-size:clamp(19px,1.6vw,23px);font-weight:700;color:var(--ink);
+    line-height:1.4;letter-spacing:.04em;
+    margin-bottom:12px;
+  }
+  .cxo-circle .cc-d{
+    font-size:clamp(12px,1vw,13.5px);color:var(--text-soft);
+    line-height:1.7;font-weight:300;
+  }
+  .cxo-arrow{
+    flex:0 0 auto;z-index:3;
+    margin:0 -12px;
+    width:34px;height:34px;border-radius:50%;
+    background:var(--gold);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;
+    box-shadow:0 8px 18px -8px rgba(201,169,97,.6);
+  }
+
+  .cxo-alumni{
+    margin-top:72px;
+    background:#fff;
+    border-top:3px solid var(--gold);
+    box-shadow:0 40px 80px -45px rgba(10,22,51,.25);
+    padding:48px 52px 52px;
+  }
+  .alumni-h{
+    font-family:'Noto Serif TC',serif;
+    font-size:24px;font-weight:700;color:var(--ink);
+    text-align:center;margin-bottom:6px;
+  }
+  .alumni-h span{
+    display:block;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+    font-size:15px;color:var(--gold-deep);letter-spacing:.06em;margin-top:2px;
+  }
+  .alumni-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:48px;align-items:center;
+    margin-top:32px;
+  }
+  .alumni-grid > *{min-width:0}
+  .alumni-text p{
+    font-size:16px;line-height:1.95;color:var(--text);
+  }
+  .alumni-text strong{color:var(--ink);font-weight:700}
+  .alumni-stats{
+    display:flex;gap:0;margin-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .alumni-stats > div{
+    flex:1;padding:20px 12px 0;
+    border-right:1px solid var(--line);
+  }
+  .alumni-stats > div:last-child{border-right:none}
+  .alumni-stats .num{
+    font-family:'Noto Serif TC',serif;font-weight:700;
+    font-size:48px;color:var(--gold-deep);line-height:1;
+    letter-spacing:.01em;
+  }
+  .alumni-stats .lbl{
+    font-size:13px;color:var(--text-soft);margin-top:10px;line-height:1.5;
+  }
+  .alumni-chart{
+    display:flex;align-items:center;gap:28px;justify-content:flex-start;
+  }
+  .pie-wrap{
+    position:relative;flex:0 0 auto;
+    padding:12px;border-radius:50%;
+    background:
+      radial-gradient(circle, rgba(201,169,97,.10), transparent 68%);
+  }
+  .pie-wrap::before{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    border:1px dashed rgba(201,169,97,.32);
+    pointer-events:none;
+  }
+  .pie{
+    width:180px;height:180px;border-radius:50%;
+    position:relative;
+    background:conic-gradient(
+      var(--gold-deep) 0          100.8deg,
+      var(--ink-2)     100.8deg   190.8deg,
+      var(--gold)      190.8deg   259.2deg,
+      var(--plum)      259.2deg   313.2deg,
+      var(--gold-soft) 313.2deg   345.6deg,
+      #b89248          345.6deg   360deg
+    );
+    box-shadow:
+      0 26px 50px -28px rgba(20,6,40,.45),
+      0 0 0 1px rgba(201,169,97,.35),
+      inset 0 0 0 2px rgba(255,255,255,.06);
+  }
+  .pie::after{
+    content:"";position:absolute;inset:30%;
+    background:#fff;border-radius:50%;
+    box-shadow:
+      0 0 0 5px rgba(255,255,255,.92),
+      0 8px 20px -10px rgba(20,6,40,.28),
+      inset 0 1px 4px rgba(20,6,40,.06);
+  }
+  .pie .pie-c{
+    position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;z-index:2;
+    gap:2px;
+  }
+  .pie .pie-c b{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:700;
+    color:var(--gold-deep);font-size:30px;
+    line-height:1;letter-spacing:.01em;
+  }
+  .pie .pie-c span{
+    font-family:'Noto Serif TC',serif;
+    font-size:11px;color:var(--text);
+    line-height:1.3;margin-top:4px;
+    letter-spacing:.24em;
+    padding-top:5px;
+    border-top:1px solid var(--line-strong);
+  }
+  .legend{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;min-width:0}
+  .legend li{
+    display:flex;align-items:center;gap:10px;
+    font-size:13.5px;color:var(--text);white-space:nowrap;
+    padding-bottom:10px;
+    border-bottom:1px dashed var(--line);
+  }
+  .legend li:last-child{border-bottom:none;padding-bottom:0}
+  .legend li i{
+    flex:0 0 auto;width:9px;height:9px;border-radius:50%;
+    box-shadow:0 0 0 2px rgba(255,255,255,.85), 0 1px 3px rgba(20,6,40,.18);
+  }
+  .legend li b{
+    color:var(--ink);font-weight:700;margin-left:auto;padding-left:8px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:16px;
+    letter-spacing:.02em;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials{
+    background:var(--ink);
+    color:var(--cream);
+    position:relative;overflow:hidden;
+  }
+  .testimonials .section-label{color:var(--gold)}
+  .testimonials .section-title{color:#fff}
+  .testimonials .section-title em{color:var(--gold)}
+  .testimonials .section-sub{color:rgba(245,241,232,.82)}
+  .tst-wrap{margin-top:50px;position:relative;z-index:2}
+  .tst-track{
+    display:flex;gap:28px;overflow-x:auto;
+    align-items:flex-start;
+    scroll-snap-type:x mandatory;
+    padding-bottom:6px;
+    scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .tst-track::-webkit-scrollbar{display:none}
+  .tst-card{
+    flex:0 0 calc(50% - 14px);scroll-snap-align:start;
+    background:linear-gradient(165deg, rgba(245,241,232,.07) 0%, rgba(245,241,232,.02) 100%);
+    border:1px solid rgba(201,169,97,.22);
+    padding:38px 40px 42px;
+    position:relative;
+    display:flex;flex-direction:column;
+  }
+  .tst-mark{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:80px;line-height:.7;height:42px;
+    color:rgba(201,169,97,.4);
+  }
+  .tst-co{
+    font-size:13px;letter-spacing:.18em;color:var(--gold);
+    margin-bottom:6px;
+  }
+  .tst-name{
+    font-family:'Noto Serif TC',serif;
+    font-size:24px;font-weight:700;color:#fff;
+    letter-spacing:.04em;margin-bottom:22px;
+    padding-bottom:18px;
+    border-bottom:1px solid rgba(201,169,97,.22);
+  }
+  .tst-text{
+    font-size:16px;line-height:2;
+    color:rgba(245,241,232,.82);font-weight:300;
+  }
+  .tst-text .en{
+    display:block;margin-top:14px;
+    font-size:13.5px;color:rgba(245,241,232,.5);
+    font-style:italic;line-height:1.75;
+    letter-spacing:.01em;
+  }
+  .tst-nav{
+    display:flex;align-items:center;justify-content:center;gap:22px;
+    margin-top:34px;
+  }
+  .tst-dots{display:flex;gap:8px}
+  .tst-dot{
+    width:9px;height:9px;border-radius:50%;
+    background:rgba(201,169,97,.3);border:0;cursor:pointer;padding:0;
+    transition:width .25s ease, background .25s ease;
+  }
+  .tst-dot.active{background:var(--gold);width:26px;border-radius:5px}
+  .tst-arrow{
+    width:44px;height:44px;border-radius:50%;
+    border:1px solid rgba(201,169,97,.4);background:transparent;color:var(--gold);
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;
+    transition:background .2s ease, color .2s ease;
+  }
+  .tst-arrow:hover{background:var(--gold);color:var(--ink)}
 
   /* ===== PRICING ===== */
   .pricing{
@@ -666,14 +917,14 @@
   }
   .price-grid{
     display:grid;
-    grid-template-columns:1.4fr 1fr;
+    grid-template-columns:1fr;
     gap:50px;
     align-items:start;
   }
   .price-main{
     background:linear-gradient(160deg, var(--ink) 0%, var(--ink-3) 100%);
     color:var(--cream);
-    padding:48px 44px;
+    padding:44px 48px 40px;
     position:relative;
     overflow:hidden;
   }
@@ -719,6 +970,69 @@
     white-space:nowrap;
   }
   .price-tier .pamt .cur{font-size:15px;color:var(--gold-soft);margin-right:6px}
+
+  /* Full-programme — header + 3-column comparison */
+  .price-head{
+    position:relative;z-index:2;
+    display:flex;justify-content:space-between;align-items:flex-end;
+    gap:24px;
+    padding-bottom:26px;
+    margin-bottom:6px;
+    border-bottom:1px solid rgba(201,169,97,.22);
+  }
+  .price-head-meta{
+    font-size:13px;line-height:1.7;text-align:right;
+    color:rgba(229,212,168,.7);
+    font-weight:300;letter-spacing:.04em;
+    white-space:nowrap;
+  }
+  .price-cols{
+    position:relative;z-index:2;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+  }
+  .price-col{
+    display:flex;flex-direction:column;
+    padding:30px 30px 6px;
+    border-right:1px solid rgba(201,169,97,.18);
+    position:relative;
+  }
+  .price-col:first-child{padding-left:0}
+  .price-col:last-child{border-right:none;padding-right:0}
+  .price-col.is-featured{
+    background:linear-gradient(180deg, rgba(201,169,97,.12) 0%, transparent 80%);
+  }
+  .price-col .ptag{
+    position:absolute;top:18px;right:18px;
+    font-family:'Noto Sans TC',sans-serif;
+    font-size:11px;font-weight:500;letter-spacing:.14em;
+    color:var(--ink);background:var(--gold);
+    padding:4px 11px;
+  }
+  .price-col .pname{
+    font-family:'Noto Serif TC',serif;
+    color:#fff;font-size:21px;font-weight:500;
+    margin-bottom:6px;
+  }
+  .price-col .pdesc{
+    font-size:13px;line-height:1.55;
+    color:rgba(229,212,168,.7);
+    font-family:'Noto Sans TC',sans-serif;
+    font-weight:300;letter-spacing:.04em;
+  }
+  .price-col .pamt{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;font-size:42px;line-height:1;
+    color:var(--gold);
+    margin-top:auto;padding-top:28px;
+    white-space:nowrap;
+  }
+  .price-col .pamt .cur{
+    font-family:'Inter',sans-serif;
+    font-weight:500;font-size:14px;
+    color:var(--gold-soft);margin-right:7px;
+    letter-spacing:.04em;
+  }
 
   .cxo-box{
     background:#fff;
@@ -804,7 +1118,7 @@
     letter-spacing:.04em;
   }
   .ft-cols{
-    display:grid;grid-template-columns:repeat(3, 1fr);
+    display:grid;grid-template-columns:1fr;
     gap:48px;
     padding:48px 0 36px;
     max-width:1200px;margin:0 auto;
@@ -837,6 +1151,71 @@
     color:var(--gold);
     border-bottom-color:var(--gold);
   }
+
+  /* Contact cards */
+  .ft-contact .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:24px 56px;
+    align-items:start;
+  }
+  .contact-card{
+    padding:26px 28px;
+    background:rgba(245,241,232,.035);
+    border:1px solid rgba(201,169,97,.18);
+    border-radius:0;
+  }
+  .cc-org{
+    font-size:12px;letter-spacing:.16em;
+    color:rgba(245,241,232,.45);
+    margin-bottom:6px;
+  }
+  .cc-name{
+    font-family:'Noto Serif TC',serif;
+    color:#fff;font-weight:700;font-size:23px;
+    letter-spacing:.04em;
+    margin-bottom:20px;
+  }
+  .ft-contact .cc-row{
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:14px;
+    font-size:15px;
+    color:rgba(245,241,232,.82);
+    text-decoration:none;
+    border-bottom:none;
+  }
+  .ft-contact .cc-row:last-child{margin-bottom:0}
+  .ft-contact .cc-row:hover{color:#fff;border-bottom:none}
+  .ft-contact .cc-row span:last-child{
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease;
+  }
+  .ft-contact .cc-row:hover span:last-child{border-bottom-color:var(--gold)}
+  .cc-ic{
+    flex:0 0 auto;
+    width:36px;height:36px;
+    display:inline-flex;align-items:center;justify-content:center;
+    background:var(--gold);
+    color:var(--ink);
+    border-radius:50%;
+    transition:background .2s ease;
+  }
+  .ft-contact .cc-row:hover .cc-ic{background:var(--gold-soft)}
+  .cc-ic svg{width:18px;height:18px}
+  .cc-apply{
+    grid-column:1 / -1;
+    justify-self:start;
+    display:inline-flex;align-items:center;gap:10px;
+    margin-top:4px;
+    font-size:14px;letter-spacing:.16em;
+    color:var(--gold);
+    text-decoration:none;
+    border-bottom:1px solid rgba(201,169,97,.4);
+    padding-bottom:3px;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .cc-apply:hover{color:var(--gold-soft);border-bottom-color:var(--gold-soft)}
+  .cc-apply .arrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px}
   .ft-bottom{
     max-width:1200px;margin:0 auto;
     padding-top:28px;
@@ -853,6 +1232,7 @@
   }
   @media (max-width: 900px){
     .ft-cols{grid-template-columns:1fr;gap:32px}
+    .ft-contact .contact-grid{grid-template-columns:1fr;gap:20px}
   }
 
   /* ===== STICKY MINI-NAV ===== */
@@ -939,7 +1319,20 @@
       scroll-snap-align:start;
     }
     .spk-grid{grid-template-columns:1fr 1fr}
+    .spk-panel{flex-direction:column;align-items:flex-start;gap:16px}
+    .spk-panel .spk-panel-tag{border-right:none;padding-right:0;margin-right:0;padding-bottom:14px;margin-bottom:0;border-bottom:1px solid rgba(201,169,97,.32);width:100%}
+    .spk-panel-names{width:100%}
+    .spk-panel .spk-role{margin:0}
+    .alumni-grid{grid-template-columns:1fr;gap:40px}
+    .alumni-chart{justify-content:center}
     .price-grid{grid-template-columns:1fr}
+    .price-head{flex-direction:column;align-items:flex-start;gap:10px}
+    .price-head-meta{text-align:left}
+    .price-cols{grid-template-columns:1fr}
+    .price-col{padding:24px 0;border-right:none;border-bottom:1px solid rgba(201,169,97,.18)}
+    .price-col:last-child{border-bottom:none}
+    .price-col .pamt{margin-top:14px;padding-top:0}
+    .price-col .ptag{position:static;align-self:flex-start;margin-bottom:12px}
     section{padding:70px 6vw}
     .hero{padding:50px 6vw 60px}
     table.cur{font-size:12.5px}
@@ -952,7 +1345,17 @@
     .module-grid{grid-template-columns:1fr}
     .module{border-right:none;border-bottom:1px solid var(--line)}
     .spk-grid{grid-template-columns:1fr}
+    .spk-panel-names{flex-direction:column}
+    .spk-panel .spk-panel-names .spk-name{padding:0 0 10px;border-right:none;border-bottom:1px dashed rgba(201,169,97,.20)}
+    .spk-panel .spk-panel-names .spk-name:last-child{border-bottom:none;padding-bottom:0}
     .session-no .num{font-size:60px}
+    .cxo-circles{flex-direction:column}
+    .cxo-circle{width:clamp(240px,72vw,300px);height:clamp(240px,72vw,300px)}
+    .cxo-circle + .cxo-circle{margin-left:0;margin-top:-46px}
+    .cxo-arrow{transform:rotate(90deg);margin:-12px 0}
+    .alumni-grid{grid-template-columns:1fr;gap:36px}
+    .alumni-chart{flex-direction:column;gap:24px}
+    .tst-card{flex:0 0 100%}
   }
 </style>
 <style id="uw-video-styles">
@@ -969,8 +1372,10 @@
   <nav>
     <a href="#objectives">課程目標</a>
     <a href="#modules">模組</a>
-    <a href="#curriculum">課表</a>
+    <a href="#schedule">課表</a>
     <a href="#speakers">講師</a>
+    <a href="#cxo">校友會</a>
+    <a href="#testimonials">學員推薦</a>
     <a href="#pricing">報名方案</a>
   </nav>
   <a class="nav-cta" href="https://itricollege.surveycake.biz/s/eLnkX" target="_blank" rel="noopener">立即報名 →</a>
@@ -992,39 +1397,33 @@
 <header class="hero">
   <canvas class="hero-wave" id="heroWave"></canvas>
   <div class="hero-inner">
-    <div class="session-no" style="display:none">
-      <span class="num">13</span>
-      <span class="label">—&nbsp; Thirteenth Cohort &nbsp;2026</span>
-    </div>
-
     <h1 class="title" style="text-align: left">
       科技產業經營<br>
       高階主管研習班 <span class="title-deco">第<em>13</em>期</span>
     </h1>
     <div class="subtitle" style="text-align: left"><em>AI</em> 盛世下的致勝之道</div>
 
-    <p class="lead" style="text-align: left">
-      從政經局勢、科技創新、到高階決策思維，打造科技產業領導者的全局經營力。<br>
-      課程專為面對 AI 驅動全球產業版圖重組的企業領導者所設計，<br>
-      使經營心法從傳統經驗導向，調適為可持續升級的「策略思維與決策系統」。
-    </p>
+    <div class="lead-block">
+      <p class="lead lead-1">本課程專為<strong>企業領導者</strong>所設計，因應 <em>AI</em> 驅動產業版圖重組、經營環境愈益複雜，全面強化<strong>高階決策思維與組織領導力</strong>。</p>
+      <p class="lead lead-2">透過產業巨擘的遠見、與具高度影響力的專家深度對談交流，突破領導決策困境、拆解轉型實踐挑戰，掌握創新科技應用與部署未來商機，強化在變局中的長遠競爭優勢。</p>
+    </div>
 
     <div class="meta-row">
       <div class="meta-cell">
         <div class="k">Duration</div>
-        <div class="v">07/31 — 09/18<span class="small">2026 · 48 小時 / 7 週</span></div>
+        <div class="v">07/31 — 09/23<span class="small">2026 · 48 小時 / 7 週</span></div>
       </div>
       <div class="meta-cell">
         <div class="k">Venue</div>
-        <div class="v">工研院 臺北 BR6<span class="small">BR6 · 電腦教室</span></div>
+        <div class="v">工研院產業學院<span class="small">台北學習中心 · BR6</span></div>
       </div>
       <div class="meta-cell">
         <div class="k">Audience</div>
-        <div class="v">副總級以上主管<span class="small">限 30 人 · 邀請審查</span></div>
+        <div class="v">企業高階主管、接班梯隊<span class="small">限 30 名 · 報名審查制</span></div>
       </div>
       <div class="meta-cell">
         <div class="k">Tuition</div>
-        <div class="v">NT$ 99,000 起<span class="small">早鳥優惠 NT$ 94,000</span></div>
+        <div class="v"><span class="hl" style="white-space:nowrap">NT$ 94,000</span><span class="small">早鳥價 · 原價 99,000 · 6/30 止</span></div>
       </div>
     </div>
 
@@ -1035,7 +1434,6 @@
       <a class="btn-apply btn-apply--ghost" href="#curriculum">
         了解課程 <span class="arrow">↓</span>
       </a>
-      <span class="cta-deadline">Early Bird · until 6/30</span>
     </div>
 
   </div>
@@ -1048,45 +1446,10 @@
     <h2 class="section-title">在變局中重塑經營心法，<br>讓決策跟得上 <em>AI</em> 的速度。</h2>
     <p class="section-sub">透過產業巨擘的遠見、與具高度影響力的專家深度對談交流，突破領導決策困境、拆解轉型實踐挑戰，掌握創新科技應用與部署未來商機。</p>
 
-    <div class="obj-grid">
-      <div class="obj-text">
-        <p>本課程專為面對 <strong>AI 驅動全球產業版圖重組</strong> 的企業領導者所設計，核心在於使經營心法從傳統經驗導向，調適為可持續升級的「<strong>策略思維與決策系統</strong>」。</p>
-        <p>透過產業巨擘的遠見、以及與具高度影響力的專家深度對談交流，學員將突破領導決策困境、拆解轉型實踐挑戰，掌握創新科技應用與部署未來商機，<strong>強化企業在變局中的長遠競爭優勢</strong>。</p>
-        <p>七週密集課程串連洞察、創新、布局與決策四大模組，最後以分組專題實作收斂為企業可執行的成長策略藍圖。</p>
-      </div>
-      <div class="obj-quote">
-        <div class="q-title">學習收穫 <span class="en">Four Capabilities</span></div>
-        <ul class="cap-list">
-          <li class="cap-item">
-            <div class="cap-num">01</div>
-            <div>
-              <div class="cap-head">洞悉變局</div>
-              <div class="cap-desc">掌握 AI 新工業版圖、全球政經與供應鏈趨勢，強化變局下的應變韌性。</div>
-            </div>
-          </li>
-          <li class="cap-item">
-            <div class="cap-num">02</div>
-            <div>
-              <div class="cap-head">驅動創新</div>
-              <div class="cap-desc">從 AI 生態系到智慧應用，以創新科技為槓桿，重塑商業模式。</div>
-            </div>
-          </li>
-          <li class="cap-item">
-            <div class="cap-num">03</div>
-            <div>
-              <div class="cap-head">領導布局</div>
-              <div class="cap-desc">重新定義價值主張與技術藍圖，成功部署關鍵資源，敏捷轉型再成長。</div>
-            </div>
-          </li>
-          <li class="cap-item">
-            <div class="cap-num">04</div>
-            <div>
-              <div class="cap-head">超速決策</div>
-              <div class="cap-desc">商業策略模擬實戰、代理型 AI 部署與分組專題研討，鍛鍊進化營運決策。</div>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <div class="obj-text">
+      <p>本課程專為面對 <strong>AI 驅動全球產業版圖重組</strong> 的企業領導者所設計，核心在於使經營心法從傳統經驗導向，調適為可持續升級的「<strong>策略思維與決策系統</strong>」。</p>
+      <p>透過產業巨擘的遠見、以及與具高度影響力的專家深度對談交流，學員將突破領導決策困境、拆解轉型實踐挑戰，掌握創新科技應用與部署未來商機，<strong>強化企業在變局中的長遠競爭優勢</strong>。</p>
+      <p>七週密集課程串連洞察、創新、布局與決策四大模組，最後以分組專題實作收斂為企業可執行的成長策略藍圖。</p>
     </div>
   </div>
 </section>
@@ -1131,83 +1494,28 @@
   </div>
 </section>
 
-<!-- CURRICULUM TABLE -->
-<section class="curriculum" id="curriculum">
-  <div class="container">
-    <div class="section-label"><span class="ord">III</span>Curriculum</div>
-    <h2 class="section-title">課程安排 · <em>48 hours / 7 weeks</em></h2>
-    <p class="section-sub">12 門主題課程串聯四大模組，邀請產學研頂尖領袖授課，並結合分組專題與商業策略模擬。</p>
-
-    <div class="cur-wrap">
-      <table class="cur">
-        <thead>
-          <tr>
-            <th style="width: 42%; font-size: 20px; text-align: left">課程主題</th>
-            <th style="width: 14%; white-space: nowrap; font-size: 20px; text-align: center">時數</th>
-            <th style="width: 44%; font-size: 20px; text-align: center">師資安排</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="mod-row"><td colspan="3"><span class="mn">1</span>洞悉變局　Sense the Shift</td></tr>
-          <tr><td class="topic">始業式 · 洞見 AI 大未來</td><td class="hours" style="text-align: center">2h</td>
-            <td class="faculty">開場致詞 工研院 張培仁院長 / 周怡君執行長<br>緯穎 洪麗甯董事長 / 鴻海 劉揚偉董事長 / 中華電信 簡志誠董事長</td></tr>
-          <tr><td class="topic">國際政經局勢與供應鏈重塑</td><td class="hours" style="text-align: center">3h</td>
-            <td class="faculty">臺灣大學 陳添枝 名譽教授</td></tr>
-
-          <tr class="mod-row"><td colspan="3"><span class="mn">2</span>驅動創新　Drive Innovation</td></tr>
-          <tr><td class="topic">全球科技競局下我國產業機會與挑戰</td><td class="hours" style="text-align: center">3h</td>
-            <td class="faculty">國科會 吳誠文 主委 + 工研院 吳志毅 資深專家</td></tr>
-          <tr><td class="topic">智慧機器人 — 轉型關鍵與創新應用</td><td class="hours" style="text-align: center">3h</td>
-            <td class="faculty">達明機器人 黃識忠 營運長 (備 / 研華)</td></tr>
-          <tr><td class="topic">AI 生態系與創投佈局 ROI</td><td class="hours" style="text-align: center">3h</td>
-            <td class="faculty">台灣大哥大 林之晨 總經理 / 創新工業技術移轉(股)公司 瞿志豪 董事</td></tr>
-
-          <tr class="mod-row"><td colspan="3"><span class="mn">3</span>領導布局　Lead the Future</td></tr>
-          <tr><td class="topic">洞悉客戶價值與跨域思維</td><td class="hours" style="text-align: center">3h</td>
-            <td class="faculty">清華大學 金聯舫 榮譽講座教授</td></tr>
-          <tr><td class="topic">AI 治理與技術策略新藍圖</td><td class="hours" style="text-align: center">3h</td>
-            <td class="faculty">台達研究院 闕志克 院長 / 台達 郭大偉 技術長</td></tr>
-          <tr><td class="topic">企業轉型再成長</td><td class="hours" style="text-align: center">6h</td>
-            <td class="faculty">誠致教育基金會 李吉仁 董事長</td></tr>
-
-          <tr class="mod-row"><td colspan="3"><span class="mn">4</span>超速決策　Decide Faster</td></tr>
-          <tr><td class="topic">代理型 AI 部署與 Claude Code 敏捷決策實作</td><td class="hours" style="text-align: center">3h</td>
-            <td class="faculty">AWS Hero 蔣鐙緯 · PAFERS Tech 產品科技整合總監</td></tr>
-          <tr><td class="topic">商業策略模擬實戰</td><td class="hours" style="text-align: center">8h</td>
-            <td class="faculty">BTS Patrick Fei 執行副總裁 · 周惠娟 Taiwan 總經理</td></tr>
-          <tr><td class="topic">創新經營與決策路徑 (分組專題研討)</td><td class="hours" style="text-align: center">3h</td>
-            <td class="faculty">長庚大學管理研究所 于卓民 所長</td></tr>
-          <tr><td class="topic">分組專題討論與發表 · 結業式</td><td class="hours" style="text-align: center">8h</td>
-            <td class="faculty">主持 周怡君 執行長<br>指導專家群 史欽泰董事長、徐爵民部長、羅達賢特聘專家、于卓民所長</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
 <!-- SCHEDULE -->
 <section class="schedule" id="schedule">
   <div class="container">
-    <div class="section-label"><span class="ord">IV</span>Weekly Schedule</div>
-    <h2 class="section-title">七週課程表 · <em>Friday Series</em></h2>
-    <p class="section-sub">每週五於臺北上課，9/11 溫書假。上、下午各一主題並結合分組專題演進。</p>
+    <div class="section-label"><span class="ord">III</span>Weekly Schedule</div>
+    <h2 class="section-title">七週課程表 · <em>Weekly Series</em></h2>
+    <p class="section-sub">於臺北上課，第六週 9/04 或 9/11 擇一、第七週 9/23（三）。上、下午各一主題並結合分組專題演進。</p>
 
     <div class="weeks">
-
       <div class="week">
         <div class="week-no">Week I.</div>
         <div class="week-date">7/31 五</div>
-        <div class="week-tag">開課 · 始業式</div>
+        <div class="week-tag">始業式</div>
         <div class="week-divider"></div>
         <div class="slot">
           <div class="slot-label">AM</div>
           <div class="slot-topic">洞見 AI 大未來</div>
-          <div class="slot-spk">張院長｜周執行長｜洪麗甯董事長</div>
+          <div class="slot-spk">開場｜張院長·周執行長<br>主講｜潘健成 執行長</div>
         </div>
         <div class="slot">
           <div class="slot-label">PM</div>
-          <div class="slot-topic">國際政經局勢與供應鏈重塑</div>
-          <div class="slot-spk">陳添枝 臺大名譽教授</div>
+          <div class="slot-topic">代理型 AI 部署與 Claude Code 敏捷決策實作</div>
+          <div class="slot-spk">蔣鐙緯<br>產品科技整合總監</div>
         </div>
         <div class="slot">
           <div class="slot-label">Project</div>
@@ -1218,17 +1526,17 @@
       <div class="week">
         <div class="week-no">Week II.</div>
         <div class="week-date">8/07 五</div>
-        <div class="week-tag">產業競局</div>
+        <div class="week-tag">產業變局</div>
         <div class="week-divider"></div>
         <div class="slot">
           <div class="slot-label">AM</div>
-          <div class="slot-topic">全球科技競局下我國產業機會與挑戰</div>
-          <div class="slot-spk">吳誠文主委<br>吳志毅資深專家</div>
+          <div class="slot-topic">國際政經局勢與供應鏈重塑</div>
+          <div class="slot-spk">陳添枝<br>臺大名譽教授</div>
         </div>
         <div class="slot">
           <div class="slot-label">PM</div>
           <div class="slot-topic">創新經營與決策路徑</div>
-          <div class="slot-spk">于卓民 長庚大學所長</div>
+          <div class="slot-spk">于卓民<br>長庚大學所長</div>
         </div>
         <div class="slot">
           <div class="slot-label">Project</div>
@@ -1239,17 +1547,17 @@
       <div class="week">
         <div class="week-no">Week III.</div>
         <div class="week-date">8/14 五</div>
-        <div class="week-tag">客戶與 AI 實作</div>
+        <div class="week-tag">Agentic AI · 客戶價值</div>
         <div class="week-divider"></div>
         <div class="slot">
           <div class="slot-label">AM</div>
-          <div class="slot-topic">洞悉客戶價值與跨域思維</div>
-          <div class="slot-spk">金聯舫<br>清大榮譽講座教授</div>
+          <div class="slot-topic">Agentic AI 技術發展、導入及對 AI 硬體產業的影響</div>
+          <div class="slot-spk">闕志克<br>台達研究院院長</div>
         </div>
         <div class="slot">
           <div class="slot-label">PM</div>
-          <div class="slot-topic">代理型 AI 部署與 Claude Code 敏捷決策實作</div>
-          <div class="slot-spk">蔣鐙緯<br>產品科技整合總監</div>
+          <div class="slot-topic">洞悉客戶價值與跨域思維</div>
+          <div class="slot-spk">金聯舫<br>清大榮譽講座教授</div>
         </div>
         <div class="slot">
           <div class="slot-label">Project</div>
@@ -1260,12 +1568,12 @@
       <div class="week">
         <div class="week-no">Week IV.</div>
         <div class="week-date">8/21 五</div>
-        <div class="week-tag">策略模擬 (上)</div>
+        <div class="week-tag">策略模擬實戰</div>
         <div class="week-divider"></div>
         <div class="slot">
           <div class="slot-label">FULL DAY</div>
           <div class="slot-topic">商業策略模擬實戰</div>
-          <div class="slot-spk">Patrick Fei · 周惠娟<br>BTS TW 執行團隊</div>
+          <div class="slot-spk">Patrick Fei 執行副總裁<br>周惠娟 BTS TW 總經理</div>
         </div>
         <div class="slot">
           <div class="slot-label">Project</div>
@@ -1276,12 +1584,17 @@
       <div class="week">
         <div class="week-no">Week V.</div>
         <div class="week-date">8/28 五</div>
-        <div class="week-tag">轉型再成長</div>
+        <div class="week-tag">產業競局 · 智慧機器人</div>
         <div class="week-divider"></div>
         <div class="slot">
-          <div class="slot-label">FULL DAY</div>
-          <div class="slot-topic">企業轉型再成長</div>
-          <div class="slot-spk">李吉仁<br>誠致教育董事長</div>
+          <div class="slot-label">AM</div>
+          <div class="slot-topic">全球科技競局下我國產業機會與挑戰</div>
+          <div class="slot-spk">吳誠文 主委<br>吳志毅 資深專家</div>
+        </div>
+        <div class="slot">
+          <div class="slot-label">PM</div>
+          <div class="slot-topic">智慧機器人 — 轉型關鍵與創新應用</div>
+          <div class="slot-spk">黃識忠<br>達明機器人營運長</div>
         </div>
         <div class="slot">
           <div class="slot-label">Project</div>
@@ -1291,18 +1604,13 @@
 
       <div class="week">
         <div class="week-no">Week VI.</div>
-        <div class="week-date">9/04 五</div>
-        <div class="week-tag">技術藍圖</div>
+        <div class="week-date">9/04 或 9/11 五</div>
+        <div class="week-tag">轉型再成長</div>
         <div class="week-divider"></div>
         <div class="slot">
-          <div class="slot-label">AM</div>
-          <div class="slot-topic">AI 治理與技術策略新藍圖</div>
-          <div class="slot-spk">闕志克<br>台達研究院院長</div>
-        </div>
-        <div class="slot">
-          <div class="slot-label">PM</div>
-          <div class="slot-topic">智慧機器人 — 轉型關鍵與創新應用</div>
-          <div class="slot-spk">黃識忠<br>達明機器人營運長</div>
+          <div class="slot-label">FULL DAY</div>
+          <div class="slot-topic">企業轉型再成長</div>
+          <div class="slot-spk">李吉仁<br>誠致教育董事長</div>
         </div>
         <div class="slot">
           <div class="slot-label">Project</div>
@@ -1312,13 +1620,13 @@
 
       <div class="week">
         <div class="week-no">Week VII.</div>
-        <div class="week-date">9/18 五</div>
+        <div class="week-date">9/23 三</div>
         <div class="week-tag">結業式</div>
         <div class="week-divider"></div>
         <div class="slot">
           <div class="slot-label">AM</div>
           <div class="slot-topic">AI 生態系與創投佈局 ROI</div>
-          <div class="slot-spk">林之晨<br>台灣大哥大總經理</div>
+          <div class="slot-spk">瞿志豪 董事<br>創新工業技術移轉（股）</div>
         </div>
         <div class="slot">
           <div class="slot-label">PM</div>
@@ -1335,25 +1643,18 @@
 <!-- SPEAKERS -->
 <section class="speakers" id="speakers">
   <div class="container">
-    <div class="section-label"><span class="ord">V</span>Distinguished Faculty</div>
+    <div class="section-label"><span class="ord">IV</span>Distinguished Faculty</div>
     <h2 class="section-title">講師陣容 · <em>The Conveners</em></h2>
     <p class="section-sub">由產業領袖、學界泰斗與國際顧問共同組成的師資群，呈現多元跨域的高度。</p>
 
     <div class="spk-grid">
-      <div class="spk"><div class="spk-name">張培仁　院長</div><div class="spk-role">工業技術研究院</div></div>
-      <div class="spk"><div class="spk-name">周怡君　執行長</div><div class="spk-role">工研院 / 課程主持人</div></div>
-      <div class="spk"><div class="spk-name">劉揚偉　董事長</div><div class="spk-role">鴻海科技集團</div></div>
-      <div class="spk"><div class="spk-name">洪麗甯　董事長</div><div class="spk-role">緯穎科技</div></div>
-      <div class="spk"><div class="spk-name">簡志誠　董事長</div><div class="spk-role">中華電信</div></div>
+      <div class="spk"><div class="spk-name">潘健成　創辦人</div><div class="spk-role">群聯電子</div></div>
       <div class="spk"><div class="spk-name">陳添枝　名譽教授</div><div class="spk-role">國立臺灣大學</div></div>
       <div class="spk"><div class="spk-name">吳誠文　主任委員</div><div class="spk-role">國家科學及技術委員會</div></div>
-      <div class="spk"><div class="spk-name">吳志毅　資深專家</div><div class="spk-role">工業技術研究院</div></div>
       <div class="spk"><div class="spk-name">黃識忠　營運長</div><div class="spk-role">達明機器人</div></div>
-      <div class="spk"><div class="spk-name">林之晨　總經理</div><div class="spk-role">台灣大哥大</div></div>
       <div class="spk"><div class="spk-name">瞿志豪　董事</div><div class="spk-role">創新工業技術移轉(股)</div></div>
       <div class="spk"><div class="spk-name">金聯舫　榮譽講座教授</div><div class="spk-role">國立清華大學</div></div>
       <div class="spk"><div class="spk-name">闕志克　院長</div><div class="spk-role">台達研究院</div></div>
-      <div class="spk"><div class="spk-name">郭大偉　技術長</div><div class="spk-role">台達電子</div></div>
       <div class="spk"><div class="spk-name">李吉仁　董事長</div><div class="spk-role">誠致教育基金會</div></div>
       <div class="spk"><div class="spk-name">Patrick Fei　EVP</div><div class="spk-role">BTS Global</div></div>
       <div class="spk"><div class="spk-name">周惠娟　Taiwan 總經理</div><div class="spk-role">BTS Taiwan</div></div>
@@ -1361,10 +1662,114 @@
       <div class="spk"><div class="spk-name">于卓民　所長</div><div class="spk-role">長庚大學管理研究所</div></div>
       <div class="spk spk-panel">
         <div class="spk-panel-tag">Closing Panel</div>
-        <div class="spk-name">史欽泰　董事長</div>
-        <div class="spk-name">徐爵民　部長</div>
-        <div class="spk-name">羅達賢　特聘專家</div>
+        <div class="spk-panel-names">
+          <div class="spk-name">史欽泰　董事長</div>
+          <div class="spk-name">徐爵民　部長</div>
+          <div class="spk-name">羅達賢　特聘專家</div>
+        </div>
         <div class="spk-role">結業式指導專家群</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CXO CLUB -->
+<section class="cxo" id="cxo">
+  <div class="container">
+    <div class="cxo-head">
+      <div class="section-label"><span class="ord">V</span>Alumni Network</div>
+      <h2 class="section-title">你將成為 <em>CXO Club</em> 會員之一</h2>
+      <p class="section-sub">完成本期全系列課程，即成為工研院 CXO Club 會員，享有下列專屬活動資格。</p>
+    </div>
+
+    <div class="cxo-circles">
+      <div class="cxo-circle">
+        <div class="cc-h">年度餐敘<br>歷屆共聚</div>
+        <div class="cc-d">串聯歷屆學員回娘家，延續學習情誼、汲取經營智慧。</div>
+      </div>
+      <span class="cxo-arrow" aria-hidden="true">→</span>
+      <div class="cxo-circle is-mid">
+        <div class="cc-h">CXO Club<br>菁英匯集</div>
+        <div class="cc-d">產學研各領域菁英匯集，厚植人脈資本、擴散乘數效益。</div>
+      </div>
+      <span class="cxo-arrow" aria-hidden="true">→</span>
+      <div class="cxo-circle">
+        <div class="cc-h">科技串門子<br>跨域合作</div>
+        <div class="cc-d">每年 3~4 場專家座談與場域參訪，發掘技術合作商機。</div>
+      </div>
+    </div>
+
+    <div class="cxo-alumni">
+      <h3 class="alumni-h">歷屆成員 <span>Alumni Profile</span></h3>
+      <div class="alumni-grid">
+        <div class="alumni-text">
+          <p>工研院身具前瞻科技研發的關鍵角色，亦為科技管理人才的培育重鎮。產業學院自 <strong>2015 年</strong>以來已辦理 <strong>12期</strong>科技產業經營高階主管研習班，培育<strong>超過百位</strong>產業 CEO 及中高階經理人，課程深獲講師、學員、推薦者及產業界企業領袖之肯定。</p>
+          <div class="alumni-stats">
+            <div><div class="num">12</div><div class="lbl">辦理期別</div></div>
+            <div><div class="num">100+</div><div class="lbl">產業CEO與高階經理人</div></div>
+            <div><div class="num">2015</div><div class="lbl">創辦年份</div></div>
+          </div>
+        </div>
+        <div class="alumni-chart">
+          <div class="pie-wrap">
+            <div class="pie">
+              <div class="pie-c"><b>100+</b><span>學長姐</span></div>
+            </div>
+          </div>
+          <ul class="legend">
+            <li><i style="background:var(--gold-deep)"></i>副總經理 <b>28%</b></li>
+            <li><i style="background:var(--ink-2)"></i>總經理 <b>25%</b></li>
+            <li><i style="background:var(--gold)"></i>協理／幕僚 <b>19%</b></li>
+            <li><i style="background:var(--plum)"></i>廠處長 <b>15%</b></li>
+            <li><i style="background:var(--gold-soft)"></i>其他 <b>9%</b></li>
+            <li><i style="background:#b89248"></i>董事長／董事 <b>4%</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-label"><span class="ord">VI</span>Testimonials</div>
+    <h2 class="section-title">學員推薦 · <em>Voices</em></h2>
+    <p class="section-sub">來自歷屆學長姐的真實回饋——關於視野、人脈與決策的進化。</p>
+
+    <div class="tst-wrap">
+      <div class="tst-track" id="tstTrack">
+
+        <div class="tst-card">
+          <div class="tst-co">漢民測試系統公司</div>
+          <div class="tst-name">總經理 · 王子建</div>
+          <div class="tst-text">「科技產業經營高階主管研習班」邀請具高度影響力的企業領袖前來授課、分享產業經驗。學員從中不僅能汲取大師們寶貴的人生與管理智慧，還能與各界菁英共同學習、建立人脈，促進產業更多良性互動。</div>
+        </div>
+
+        <div class="tst-card">
+          <div class="tst-co">德淵企業</div>
+          <div class="tst-name">董事長 · 蕭向志</div>
+          <div class="tst-text">這門課程涵蓋最新科技與經營策略，讓你不僅能預見未來，還能提前在競爭中勝出。推薦給所有想變身為頂尖 CEO 的夥伴！<span class="en">This program covers the latest technology and business strategies, helping you foresee the future and get ahead of the competition. Highly recommended for anyone aiming to become a top-notch CEO.</span></div>
+        </div>
+
+        <div class="tst-card">
+          <div class="tst-co">朋程科技</div>
+          <div class="tst-name">總經理 · 吳憲忠</div>
+          <div class="tst-text">工研院產業學院「科技產業經營高階主管研習班」，講師皆為產、官、學、研於該領域有相當成就、具影響力之僑出教授與產業重量級專家，透過無私分享其實貴經驗，提供新一代領導人多元觀點與思考方向。透過參與本班學習企業發展與經營管理的秘訣與理念，進而開拓視野與格局，同時還能與學長良性互動交流及企業間合作，非常推薦給各企業菁英人才報名參加，成為更卓越的自己。</div>
+        </div>
+
+        <div class="tst-card">
+          <div class="tst-co">安瑟樂威</div>
+          <div class="tst-name">執行長 · 鄭智文</div>
+          <div class="tst-text">課程中無論是講者或同學，全是不同產業的業內高手，讓互動式學習更能激起不同火花。講者引領著大家沉浸在經典案例中，藉由講、聽、想，尋找出適合自己的解答。</div>
+        </div>
+
+      </div>
+
+      <div class="tst-nav">
+        <button class="tst-arrow" id="tstPrev" aria-label="上一則">&larr;</button>
+        <div class="tst-dots" id="tstDots"></div>
+        <button class="tst-arrow" id="tstNext" aria-label="下一則">&rarr;</button>
       </div>
     </div>
   </div>
@@ -1373,43 +1778,38 @@
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="container">
-    <div class="section-label"><span class="ord">VI</span>Investment</div>
+    <div class="section-label"><span class="ord">VII</span>Investment</div>
     <h2 class="section-title">報名方案 · <em>2026 Pricing</em></h2>
-    <p class="section-sub">邀請審查制，全班限 30 人。提供完整課程方案與單堂 CXO 體驗方案。</p>
+    <p class="section-sub">邀請審查制，全班限 30 人。完整課程方案享早鳥與推薦優惠。</p>
 
     <div class="price-grid">
 
       <div class="price-main">
-        <h3>完整課程方案</h3>
-        <div class="sub">FULL PROGRAMME · 48 hrs / 7 weeks</div>
-
-        <div class="price-tier">
+        <div class="price-head">
           <div>
+            <h3>完整課程方案</h3>
+            <div class="sub">FULL PROGRAMME · 48 hrs / 7 weeks</div>
+          </div>
+          <div class="price-head-meta">7 週 · 48 小時 · 12 門主題<br>邀請審查制 · 限 30 人</div>
+        </div>
+
+        <div class="price-cols">
+          <div class="price-col">
             <div class="pname">定價</div>
             <div class="pdesc">Standard</div>
+            <div class="pamt"><span class="cur">NT$</span>99,000</div>
           </div>
-          <div class="pamt"><span class="cur">NT$</span>99,000</div>
-        </div>
-        <div class="price-tier">
-          <div>
+          <div class="price-col is-featured">
+            <div class="ptag">早鳥 · 6/30 止</div>
             <div class="pname">早鳥價</div>
             <div class="pdesc">課前一個月報名並錄取</div>
+            <div class="pamt"><span class="cur">NT$</span>94,000</div>
           </div>
-          <div class="pamt"><span class="cur">NT$</span>94,000</div>
-        </div>
-        <div class="price-tier">
-          <div>
+          <div class="price-col">
             <div class="pname">學長姐推薦 VIP</div>
             <div class="pdesc">舊學員推薦專屬</div>
+            <div class="pamt"><span class="cur">NT$</span>90,000</div>
           </div>
-          <div class="pamt"><span class="cur">NT$</span>90,000</div>
-        </div>
-        <div class="price-tier">
-          <div>
-            <div class="pname">院內學員專屬</div>
-            <div class="pdesc">工研院內部優惠</div>
-          </div>
-          <div class="pamt"><span class="cur">NT$</span>65,000</div>
         </div>
 
         <div class="price-cta">
@@ -1420,36 +1820,6 @@
         </div>
       </div>
 
-      <div class="cxo-box">
-        <h3>CXO 單堂方案</h3>
-        <div class="sub">Executive Single-Session</div>
-
-        <div class="cxo-item">
-          <div class="cxo-num">01</div>
-          <div>
-            <div class="title">商業策略模擬實戰</div>
-            <div class="dur">一日 · BTS</div>
-          </div>
-          <div class="amt">NT$ 15,000</div>
-        </div>
-        <div class="cxo-item">
-          <div class="cxo-num">02</div>
-          <div>
-            <div class="title">企業轉型再成長</div>
-            <div class="dur">一日 · 李吉仁董事長</div>
-          </div>
-          <div class="amt">NT$ 12,000</div>
-        </div>
-        <div class="cxo-item">
-          <div class="cxo-num">03</div>
-          <div>
-            <div class="title">代理型 AI 部署與 Claude Code 敏捷決策實作</div>
-            <div class="dur">3 小時</div>
-          </div>
-          <div class="amt">NT$ 5,800</div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1457,39 +1827,58 @@
 <!-- FOOTER -->
 <footer>
   <div class="ft-cols" style="padding: 38px 0px 36px">
-    <div class="ft-col">
+    <div class="ft-col ft-contact">
       <h4 style="font-size: 20px">報名洽詢</h4>
-      <div class="row"><strong>謝小姐</strong></div>
-      <div class="row">電話 · <a href="tel:+886035918313">03-591-8313</a></div>
-      <div class="row">信箱 · <a href="/cdn-cgi/l/email-protection#cbaaa7a7a2b8a4a5a3b8a2aea38ba2bfb9a2e5a4b9ace5bfbc"><span class="__cf_email__" data-cfemail="adccc1c1c4dec2c3c5dec4c8c5edc4d9dfc483c2dfca83d9da">[email&#160;protected]</span></a></div>
-      <div class="row"><a href="https://itricollege.surveycake.biz/s/eLnkX" target="_blank" rel="noopener">線上報名表 →</a></div>
-    </div>
+      <div class="contact-grid">
 
-    <div class="ft-col">
-      <h4 style="font-size: 20px">主辦單位</h4>
-      <div class="row"><strong>工研院 產業學院</strong></div>
-      <div class="row">臺北學習中心 · BR6 電腦教室</div>
-    </div>
+        <div class="contact-card">
+          <div class="cc-org">工研院產業學院</div>
+          <div class="cc-name">謝小姐</div>
+          <a class="cc-row" data-user="allisonhsieh" data-domain="itri.org.tw">
+            <span class="cc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+            </span>
+            <span>allisonhsieh<span>&#64;</span>itri.org.tw</span>
+          </a>
+          <a class="cc-row" href="tel:+886035918313">
+            <span class="cc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"></path></svg>
+            </span>
+            <span>03-5918313</span>
+          </a>
+        </div>
 
-    <div class="ft-col">
-      <h4 style="font-size: 20px">關於本期</h4>
-      <div class="row">2026 / 07 / 31 — 09 / 18</div>
-      <div class="row">7 週 · 48 小時 · 12 門主題</div>
-      <div class="row">邀請審查制 · 限 30 人</div>
-      <div class="row">早鳥報名截止 · 2026 / 06 / 30</div>
+        <div class="contact-card">
+          <div class="cc-org">工研院產業學院</div>
+          <div class="cc-name">沈先生</div>
+          <a class="cc-row" data-user="itri536505" data-domain="itri.org.tw">
+            <span class="cc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+            </span>
+            <span>itri536505<span>&#64;</span>itri.org.tw</span>
+          </a>
+          <a class="cc-row" href="tel:+886035915497">
+            <span class="cc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"></path></svg>
+            </span>
+            <span>03-5915497</span>
+          </a>
+        </div>
+
+        <a class="cc-apply" href="https://itricollege.surveycake.biz/s/eLnkX" target="_blank" rel="noopener">線上報名表 <span class="arrow">→</span></a>
+      </div>
     </div>
   </div>
 
   <div class="ft-bottom">
     <span>© 2026 工研院 產業學院 · ITRI · All rights reserved.</span>
-    <span class="right" style="white-space:nowrap">
-</span>
+    <span class="right">AI 盛世下的致勝之道 · 2026</span>
   </div>
 </footer>
 
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   const hero=document.querySelector('.hero');
   const cv=document.getElementById('heroWave');
@@ -1560,4 +1949,71 @@
   }
 })();
 </script>
+<script>
+  (function(){
+    var track=document.getElementById('tstTrack');
+    if(!track)return;
+    var cards=Array.prototype.slice.call(track.children);
+    var dotsWrap=document.getElementById('tstDots');
+    var prev=document.getElementById('tstPrev');
+    var next=document.getElementById('tstNext');
+    var idx=0;
+    function step(){ return cards.length>1 ? (cards[1].offsetLeft - cards[0].offsetLeft) : track.clientWidth; }
+    var anim=null;
+    function animTo(target){
+      if(anim) cancelAnimationFrame(anim);
+      var start=track.scrollLeft, dist=target-start, t0=null, dur=420;
+      function frame(ts){
+        if(t0===null)t0=ts;
+        var p=Math.min(1,(ts-t0)/dur);
+        var e=1-Math.pow(1-p,3);
+        track.scrollLeft=start+dist*e;
+        if(p<1){ anim=requestAnimationFrame(frame); } else { anim=null; }
+      }
+      anim=requestAnimationFrame(frame);
+    }
+    function go(i){
+      idx=Math.max(0, Math.min(cards.length-1, i));
+      animTo(idx*step());
+      update();
+    }
+    function update(){
+      var dots=dotsWrap.children;
+      for(var i=0;i<dots.length;i++){ dots[i].classList.toggle('active', i===idx); }
+    }
+    cards.forEach(function(c,i){
+      var b=document.createElement('button');
+      b.className='tst-dot'+(i===0?' active':'');
+      b.setAttribute('aria-label','第 '+(i+1)+' 則');
+      b.addEventListener('click',function(){ go(i); });
+      dotsWrap.appendChild(b);
+    });
+    prev.addEventListener('click',function(){ go(idx-1); });
+    next.addEventListener('click',function(){ go(idx+1); });
+    var nav=track.parentNode.querySelector('.tst-nav');
+    function syncNav(){
+      var overflow = track.scrollWidth > track.clientWidth + 4;
+      nav.style.display = overflow ? 'flex' : 'none';
+    }
+    syncNav();
+    window.addEventListener('resize', syncNav);
+    var t;
+    track.addEventListener('scroll',function(){
+      clearTimeout(t);
+      t=setTimeout(function(){
+        idx=Math.round(track.scrollLeft/step());
+        update();
+      },90);
+    },{passive:true});
+  })();
+</script>
+<script>
+  (function(){
+    // assemble mailto: hrefs at runtime so the source HTML never contains a literal user@domain pattern
+    document.querySelectorAll('a[data-user][data-domain]').forEach(function(a){
+      a.href = 'mailto:' + a.dataset.user + '\u0040' + a.dataset.domain;
+    });
+  })();
+</script>
+
 </body></html>
