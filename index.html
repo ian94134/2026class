@@ -524,38 +524,45 @@
 
   /* ===== SCHEDULE WEEKS ===== */
   .schedule{
-    background:linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+    background:var(--ink-2);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
   }
+  .schedule .section-label{color:var(--gold)}
+  .schedule .section-title{color:#fff}
+  .schedule .section-title em{color:var(--gold)}
+  .schedule .section-sub{color:rgba(245,241,232,.82)}
   .weeks{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
     gap:14px;
   }
   .week{
-    background:#fff;
+    background:rgba(255,255,255,.03);
     border:1px solid var(--line);
     padding:22px 16px 24px;
     position:relative;
     transition:all .25s ease;
   }
-  .week:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(31,13,61,.28)}
+  .week:hover{transform:translateY(-4px);background:var(--ink-3);box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
   .week-no{
     font-family:'Cormorant Garamond',serif;
     font-style:italic;font-weight:600;
-    color:var(--gold-deep);
+    color:var(--gold);
     font-size:16px;
     letter-spacing:.1em;
   }
   .week-date{
     font-family:'Noto Serif TC',serif;
     font-weight:700;
-    font-size:22px;color:var(--ink);
+    font-size:22px;color:#fff;
     margin-top:3px;
   }
   .week-tag{
     margin-top:8px;
     font-size:12px;letter-spacing:.2em;
-    color:var(--gold-deep);
+    color:var(--gold);
     text-transform:uppercase;
     font-weight:600;
   }
@@ -567,44 +574,39 @@
   .slot:last-child{margin-bottom:0}
   .slot-label{
     font-size:11px;letter-spacing:.22em;
-    color:var(--gold-deep);
+    color:var(--gold);
     text-transform:uppercase;
     margin-bottom:6px;
     font-weight:700;
   }
   .slot-topic{
-    font-size:15.5px;color:var(--ink);
+    font-size:15.5px;color:var(--cream);
     font-weight:500;line-height:1.55;
   }
   .slot-spk{
-    font-size:13.5px;color:var(--text-soft);
+    font-size:13.5px;color:rgba(245,241,232,.62);
     margin-top:5px;line-height:1.6;
   }
 
   .note-box{
     margin-top:36px;
     padding:24px 28px;
-    background:#fff;
+    background:rgba(255,255,255,.04);
     border-left:3px solid var(--gold);
-    font-size:13.5px;color:var(--text-soft);line-height:1.85;
+    font-size:13.5px;color:rgba(245,241,232,.72);line-height:1.85;
   }
   .note-box .nh{
     font-family:'Noto Serif TC',serif;
-    color:var(--ink);font-weight:700;font-size:15px;
+    color:#fff;font-weight:700;font-size:15px;
     margin-bottom:8px;display:block;
   }
 
   /* ===== SPEAKERS ===== */
   .speakers{
-    background:var(--ink-2);
-    color:var(--cream);
+    background:linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
     position:relative;
     overflow:hidden;
   }
-  .speakers .section-label{color:var(--gold)}
-  .speakers .section-title{color:#fff}
-  .speakers .section-title em{color:var(--gold)}
-  .speakers .section-sub{color:rgba(245,241,232,.82)}
 
   .spk-grid{
     display:grid;
@@ -615,68 +617,25 @@
     position:relative;z-index:2;
   }
   .spk{
-    background:var(--ink-2);
+    background:#fff;
     padding:32px 28px;
     transition:background .25s ease;
   }
-  .spk:hover{background:var(--ink-3)}
+  .spk:hover{background:var(--paper)}
   .spk-name{
     font-family:'Noto Serif TC',serif;
-    font-size:21px;font-weight:700;color:#fff;
+    font-size:21px;font-weight:700;color:var(--ink);
     line-height:1.45;
     margin-bottom:4px;
   }
   .spk-title{
     font-size:12px;letter-spacing:.18em;
-    color:var(--gold);font-weight:500;
+    color:var(--gold-deep);font-weight:500;
     margin-bottom:10px;
   }
   .spk-role{
-    font-size:14px;color:rgba(245,241,232,.62);
+    font-size:14px;color:var(--text-soft);
     line-height:1.65;
-  }
-  .spk-panel .spk-name .spk-title{
-    display:inline;margin:0 0 0 10px;
-    letter-spacing:.14em;
-  }
-  /* Closing panel — full-width banner trio */
-  .spk-panel{
-    grid-column:1 / -1;
-    display:flex;flex-direction:row;align-items:center;
-    gap:0;
-    padding:30px 36px;
-    background:
-      linear-gradient(180deg, rgba(201,169,97,.06) 0%, transparent 70%),
-      var(--ink-2);
-  }
-  .spk-panel .spk-panel-tag{
-    font-family:'Cormorant Garamond',serif;
-    font-style:italic;font-weight:600;
-    font-size:20px;
-    color:var(--gold);
-    letter-spacing:.02em;
-    white-space:nowrap;
-    padding-right:36px;margin-right:36px;
-    border-right:1px solid rgba(201,169,97,.32);
-  }
-  .spk-panel-names{
-    display:flex;flex:1;
-  }
-  .spk-panel .spk-panel-names .spk-name{
-    flex:1;
-    font-size:19px;
-    margin-bottom:0;padding:0 28px;
-    border-right:1px dashed rgba(201,169,97,.20);
-  }
-  .spk-panel .spk-panel-names .spk-name:first-child{padding-left:0}
-  .spk-panel .spk-panel-names .spk-name:last-child{border-right:none}
-  .spk-panel .spk-role{
-    margin:0 0 0 36px;
-    white-space:nowrap;
-    font-size:12px;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    color:var(--gold);
   }
 
   /* ===== CXO CLUB ===== */
@@ -1324,10 +1283,6 @@
       scroll-snap-align:start;
     }
     .spk-grid{grid-template-columns:1fr 1fr}
-    .spk-panel{flex-direction:column;align-items:flex-start;gap:16px}
-    .spk-panel .spk-panel-tag{border-right:none;padding-right:0;margin-right:0;padding-bottom:14px;margin-bottom:0;border-bottom:1px solid rgba(201,169,97,.32);width:100%}
-    .spk-panel-names{width:100%}
-    .spk-panel .spk-role{margin:0}
     .alumni-grid{grid-template-columns:1fr;gap:40px}
     .alumni-chart{justify-content:center}
     .price-grid{grid-template-columns:1fr}
@@ -1350,9 +1305,6 @@
     .module-grid{grid-template-columns:1fr}
     .module{border-right:none;border-bottom:1px solid var(--line)}
     .spk-grid{grid-template-columns:1fr}
-    .spk-panel-names{flex-direction:column}
-    .spk-panel .spk-panel-names .spk-name{padding:0 0 10px;border-right:none;border-bottom:1px dashed rgba(201,169,97,.20)}
-    .spk-panel .spk-panel-names .spk-name:last-child{border-bottom:none;padding-bottom:0}
     .session-no .num{font-size:60px}
     .cxo-circles{flex-direction:column}
     .cxo-circle{width:clamp(240px,72vw,300px);height:clamp(240px,72vw,300px)}
@@ -1377,8 +1329,8 @@
   <nav>
     <a href="#objectives">課程目標</a>
     <a href="#modules">模組</a>
-    <a href="#schedule">課表</a>
     <a href="#speakers">講師</a>
+    <a href="#schedule">課表</a>
     <a href="#cxo">校友會</a>
     <a href="#testimonials">學員推薦</a>
     <a href="#pricing">報名方案</a>
@@ -1495,10 +1447,37 @@
   </div>
 </section>
 
+<!-- SPEAKERS -->
+<section class="speakers" id="speakers">
+  <div class="container">
+    <div class="section-label"><span class="ord">III</span>Distinguished Faculty</div>
+    <h2 class="section-title">講師陣容 · <em>The Conveners</em></h2>
+    <p class="section-sub">由產業領袖、學界泰斗與國際顧問共同組成的師資群，呈現多元跨域的高度。</p>
+
+    <div class="spk-grid">
+      <div class="spk"><div class="spk-name">史欽泰</div><div class="spk-title">董事長</div><div class="spk-role">結業式指導專家</div></div>
+      <div class="spk"><div class="spk-name">徐爵民</div><div class="spk-title">部長</div><div class="spk-role">結業式指導專家</div></div>
+      <div class="spk"><div class="spk-name">羅達賢</div><div class="spk-title">特聘專家</div><div class="spk-role">結業式指導專家</div></div>
+      <div class="spk"><div class="spk-name">潘健成</div><div class="spk-title">創辦人</div><div class="spk-role">群聯電子</div></div>
+      <div class="spk"><div class="spk-name">陳添枝</div><div class="spk-title">名譽教授</div><div class="spk-role">國立臺灣大學</div></div>
+      <div class="spk"><div class="spk-name">吳誠文</div><div class="spk-title">主任委員</div><div class="spk-role">國家科學及技術委員會</div></div>
+      <div class="spk"><div class="spk-name">黃識忠</div><div class="spk-title">營運長</div><div class="spk-role">達明機器人</div></div>
+      <div class="spk"><div class="spk-name">瞿志豪</div><div class="spk-title">董事</div><div class="spk-role">創新工業技術移轉(股)</div></div>
+      <div class="spk"><div class="spk-name">金聯舫</div><div class="spk-title">榮譽講座教授</div><div class="spk-role">國立清華大學</div></div>
+      <div class="spk"><div class="spk-name">闕志克</div><div class="spk-title">院長</div><div class="spk-role">台達研究院</div></div>
+      <div class="spk"><div class="spk-name">李吉仁</div><div class="spk-title">董事長</div><div class="spk-role">誠致教育基金會</div></div>
+      <div class="spk"><div class="spk-name">Patrick Fei</div><div class="spk-title">EVP</div><div class="spk-role">BTS Global</div></div>
+      <div class="spk"><div class="spk-name">周惠娟</div><div class="spk-title">Taiwan 總經理</div><div class="spk-role">BTS Taiwan</div></div>
+      <div class="spk"><div class="spk-name">蔣鐙緯</div><div class="spk-title">產品科技整合總監</div><div class="spk-role">PAFERS Tech · AWS Hero</div></div>
+      <div class="spk"><div class="spk-name">于卓民</div><div class="spk-title">所長</div><div class="spk-role">長庚大學管理研究所</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- SCHEDULE -->
 <section class="schedule" id="schedule">
   <div class="container">
-    <div class="section-label"><span class="ord">III</span>Weekly Schedule</div>
+    <div class="section-label"><span class="ord">IV</span>Weekly Schedule</div>
     <h2 class="section-title">七週課程表 · <em>Weekly Series</em></h2>
     <p class="section-sub">於臺北上課，第六週 9/04 或 9/11 擇一、第七週 9/23（三）。上、下午各一主題並結合分組專題演進。</p>
 
@@ -1638,39 +1617,6 @@
 
     </div>
 
-  </div>
-</section>
-
-<!-- SPEAKERS -->
-<section class="speakers" id="speakers">
-  <div class="container">
-    <div class="section-label"><span class="ord">IV</span>Distinguished Faculty</div>
-    <h2 class="section-title">講師陣容 · <em>The Conveners</em></h2>
-    <p class="section-sub">由產業領袖、學界泰斗與國際顧問共同組成的師資群，呈現多元跨域的高度。</p>
-
-    <div class="spk-grid">
-      <div class="spk"><div class="spk-name">潘健成</div><div class="spk-title">創辦人</div><div class="spk-role">群聯電子</div></div>
-      <div class="spk"><div class="spk-name">陳添枝</div><div class="spk-title">名譽教授</div><div class="spk-role">國立臺灣大學</div></div>
-      <div class="spk"><div class="spk-name">吳誠文</div><div class="spk-title">主任委員</div><div class="spk-role">國家科學及技術委員會</div></div>
-      <div class="spk"><div class="spk-name">黃識忠</div><div class="spk-title">營運長</div><div class="spk-role">達明機器人</div></div>
-      <div class="spk"><div class="spk-name">瞿志豪</div><div class="spk-title">董事</div><div class="spk-role">創新工業技術移轉(股)</div></div>
-      <div class="spk"><div class="spk-name">金聯舫</div><div class="spk-title">榮譽講座教授</div><div class="spk-role">國立清華大學</div></div>
-      <div class="spk"><div class="spk-name">闕志克</div><div class="spk-title">院長</div><div class="spk-role">台達研究院</div></div>
-      <div class="spk"><div class="spk-name">李吉仁</div><div class="spk-title">董事長</div><div class="spk-role">誠致教育基金會</div></div>
-      <div class="spk"><div class="spk-name">Patrick Fei</div><div class="spk-title">EVP</div><div class="spk-role">BTS Global</div></div>
-      <div class="spk"><div class="spk-name">周惠娟</div><div class="spk-title">Taiwan 總經理</div><div class="spk-role">BTS Taiwan</div></div>
-      <div class="spk"><div class="spk-name">蔣鐙緯</div><div class="spk-title">產品科技整合總監</div><div class="spk-role">PAFERS Tech · AWS Hero</div></div>
-      <div class="spk"><div class="spk-name">于卓民</div><div class="spk-title">所長</div><div class="spk-role">長庚大學管理研究所</div></div>
-      <div class="spk spk-panel">
-        <div class="spk-panel-tag">Closing Panel</div>
-        <div class="spk-panel-names">
-          <div class="spk-name">史欽泰<span class="spk-title">董事長</span></div>
-          <div class="spk-name">徐爵民<span class="spk-title">部長</span></div>
-          <div class="spk-name">羅達賢<span class="spk-title">特聘專家</span></div>
-        </div>
-        <div class="spk-role">結業式指導專家群</div>
-      </div>
-    </div>
   </div>
 </section>
 
