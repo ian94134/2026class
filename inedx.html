@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>老山羊咖啡 林口長庚店｜龜山早午餐・咖啡・輕食</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="林口長庚旁的老山羊咖啡，提供現做三明治、漢堡、沙拉、厚片與咖啡飲品，支援內用、外帶、外送與線上點餐。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700;900&amp;family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #F6F1E8; }
+  body { font-family: 'Noto Sans TC', sans-serif; color: #3B2A20; -webkit-font-smoothing: antialiased; }
+  a { color: #A6503B; text-decoration: none; }
+  a:hover { color: #3B2A20; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 900px) {
+    [data-rsp="hero"] { grid-template-columns: 1fr !important; padding-top: 40px !important; }
+    [data-rsp="vert"] { display: none !important; }
+    [data-rsp="two"] { grid-template-columns: 1fr !important; }
+    [data-rsp="foot"] { grid-template-columns: 1fr !important; }
+    [data-rsp="cells"] { grid-template-columns: 1fr !important; }
+    [data-rsp="cells"] > div { border-right: none !important; border-bottom: 1px solid #EAE1CE; }
+    [data-rsp="nav"] { justify-content: center !important; }
+    [data-rsp="head"] { justify-content: center !important; }
+  }
+</style>
+</helmet>
+
+<sc-if value="{{ hasAnnouncement }}" hint-placeholder-val="{{ true }}">
+  <div style="background: #3B2A20; color: #F0E8D8; text-align: center; padding: 9px 20px; font-size: 13px; letter-spacing: 0.12em;">{{ announcement }}</div>
+</sc-if>
+
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(246,241,232,0.93); backdrop-filter: blur(8px); border-bottom: 1px solid #DFD5C3;">
+  <div data-rsp="head" style="max-width: 1120px; margin: 0 auto; padding: 13px 24px; display: flex; align-items: center; justify-content: space-between; gap: 14px 24px; flex-wrap: wrap;">
+    <button onClick="{{ goHome }}" style="display: flex; align-items: center; gap: 11px; background: none; border: none; padding: 0; cursor: pointer; text-align: left;">
+      <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="20" rx="12" ry="16" transform="rotate(20 20 20)" fill="#6B4632"></ellipse><path d="M15 6 C25 14 15 26 25 34" stroke="#F6F1E8" stroke-width="2.6" fill="none" transform="rotate(20 20 20)"></path></svg>
+      <span style="display: flex; flex-direction: column; gap: 1px;">
+        <span style="font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.16em; color: #5C4033;">老山羊咖啡</span>
+        <span style="font-size: 10px; letter-spacing: 0.24em; color: #857662;">咖啡｜輕食｜早午餐・林口長庚店</span>
+      </span>
+    </button>
+    <nav data-rsp="nav" style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
+      <button onClick="{{ goHome }}" style="background: none; border: none; cursor: pointer; padding: 8px 13px; font-family: 'Noto Sans TC', sans-serif; font-size: 15px; letter-spacing: 0.1em; color: #3B2A20; display: flex; flex-direction: column; align-items: center; gap: 3px;" style-hover="color: #A6503B;">首頁<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}"><span style="width: 16px; height: 2px; background: #A6503B; display: block;"></span></sc-if></button>
+      <button onClick="{{ goMenu }}" style="background: none; border: none; cursor: pointer; padding: 8px 13px; font-family: 'Noto Sans TC', sans-serif; font-size: 15px; letter-spacing: 0.1em; color: #3B2A20; display: flex; flex-direction: column; align-items: center; gap: 3px;" style-hover="color: #A6503B;">菜單<sc-if value="{{ isMenu }}" hint-placeholder-val="{{ false }}"><span style="width: 16px; height: 2px; background: #A6503B; display: block;"></span></sc-if></button>
+      <button onClick="{{ goAbout }}" style="background: none; border: none; cursor: pointer; padding: 8px 13px; font-family: 'Noto Sans TC', sans-serif; font-size: 15px; letter-spacing: 0.1em; color: #3B2A20; display: flex; flex-direction: column; align-items: center; gap: 3px;" style-hover="color: #A6503B;">關於<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}"><span style="width: 16px; height: 2px; background: #A6503B; display: block;"></span></sc-if></button>
+      <button onClick="{{ goRental }}" style="background: none; border: none; cursor: pointer; padding: 8px 13px; font-family: 'Noto Sans TC', sans-serif; font-size: 15px; letter-spacing: 0.1em; color: #3B2A20; display: flex; flex-direction: column; align-items: center; gap: 3px;" style-hover="color: #A6503B;">包場<sc-if value="{{ isRental }}" hint-placeholder-val="{{ false }}"><span style="width: 16px; height: 2px; background: #A6503B; display: block;"></span></sc-if></button>
+      <button onClick="{{ goContact }}" style="background: none; border: none; cursor: pointer; padding: 8px 13px; font-family: 'Noto Sans TC', sans-serif; font-size: 15px; letter-spacing: 0.1em; color: #3B2A20; display: flex; flex-direction: column; align-items: center; gap: 3px;" style-hover="color: #A6503B;">聯絡<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}"><span style="width: 16px; height: 2px; background: #A6503B; display: block;"></span></sc-if></button>
+      <a href="https://shop.ichefpos.com/store/BKXtxlFQ/ordering" target="_blank" rel="noopener" style="margin-left: 10px; background: #5C4033; color: #F0E8D8; padding: 10px 22px; font-size: 14px; letter-spacing: 0.18em; border-radius: 2px;" style-hover="background: #A6503B; color: #F0E8D8;">線上點餐</a>
+    </nav>
+  </div>
+</header>
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<main style="animation: fadeUp 0.5s ease both;">
+  <section data-rsp="hero" style="max-width: 1120px; margin: 0 auto; padding: 68px 24px 56px; display: grid; grid-template-columns: minmax(0, 1.05fr) auto minmax(0, 0.95fr); gap: 40px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 26px;">
+      <p style="margin: 0; font-size: 13px; letter-spacing: 0.42em; color: #A6503B; font-weight: 500;">LAO SHAN YANG COFFEE・LINKOU</p>
+      <h1 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: clamp(34px, 6.5vw, 52px); line-height: 1.34; font-weight: 900; letter-spacing: 0.04em; text-wrap: pretty;">從一杯咖啡，<br>開啟舒服的一天。</h1>
+      <p style="margin: 0; font-size: 16px; line-height: 2; color: #6B5A48; max-width: 42ch;">林口長庚旁的咖啡與早午餐小店，現做三明治、漢堡、沙拉與咖啡飲品；內用、外帶、外送都方便。</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://shop.ichefpos.com/store/BKXtxlFQ/ordering" target="_blank" rel="noopener" style="background: #A6503B; color: #F6F1E8; padding: 14px 30px; font-size: 15px; letter-spacing: 0.2em; border-radius: 2px;" style-hover="background: #3B2A20; color: #F6F1E8;">線上點餐</a>
+        <button onClick="{{ goMenu }}" style="background: none; color: #3B2A20; border: 1px solid #3B2A20; cursor: pointer; padding: 14px 30px; font-size: 15px; letter-spacing: 0.2em; font-family: 'Noto Sans TC', sans-serif; border-radius: 2px;" style-hover="background: #3B2A20; color: #F0E8D8;">看菜單</button>
+        <a href="https://lin.ee/QDPOw4B" target="_blank" rel="noopener" style="border: 1px solid #6B8E23; color: #55701C; padding: 14px 30px; font-size: 15px; letter-spacing: 0.2em; border-radius: 2px;" style-hover="background: #55701C; color: #F6F1E8;">加 LINE 詢問</a>
+      </div>
+    </div>
+    <div data-rsp="vert" style="writing-mode: vertical-rl; font-family: 'Noto Serif TC', serif; font-size: 15px; letter-spacing: 0.5em; color: #857662; border-left: 1px solid #DFD5C3; padding-left: 18px; height: 290px;">咖啡・輕食・早午餐</div>
+    <div style="position: relative;">
+      <div style="width: 100%; aspect-ratio: 4 / 5; position: relative;">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="hero" src="assets/storefront-portrait.jpg" shape="rounded" radius="6" placeholder="店門口照片" hint-size="100%,520px"></x-import>
+      </div>
+      <div style="position: absolute; right: -14px; bottom: -14px; background: #3B2A20; color: #F0E8D8; padding: 14px 20px; font-family: 'Noto Serif TC', serif; font-size: 14px; letter-spacing: 0.24em; pointer-events: none;">復興北路 6 巷 47 號</div>
+    </div>
+  </section>
+
+  <section style="border-top: 1px solid #DFD5C3; border-bottom: 1px solid #DFD5C3; background: #FDFAF3;">
+    <div data-rsp="cells" style="max-width: 1120px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;">
+      <div style="padding: 26px 24px; border-right: 1px solid #EAE1CE; display: flex; flex-direction: column; gap: 6px;">
+        <span style="font-size: 11px; letter-spacing: 0.3em; color: #A6503B;">營業時間</span>
+        <span style="font-size: 15px; color: #3B2A20; line-height: 1.7;">平日 06:30–16:30・週末 08:30–17:30<br><span style="font-size: 13px; color: #857662;">週二公休</span></span>
+      </div>
+      <div style="padding: 26px 24px; border-right: 1px solid #EAE1CE; display: flex; flex-direction: column; gap: 6px;">
+        <span style="font-size: 11px; letter-spacing: 0.3em; color: #A6503B;">地點</span>
+        <span style="font-size: 15px; color: #3B2A20; line-height: 1.7;">桃園市龜山區復興北路 6 巷 47 號<br><span style="font-size: 13px; color: #857662;">林口長庚商圈</span></span>
+      </div>
+      <div style="padding: 26px 24px; display: flex; flex-direction: column; gap: 6px;">
+        <span style="font-size: 11px; letter-spacing: 0.3em; color: #A6503B;">取餐方式</span>
+        <span style="font-size: 15px; color: #3B2A20; line-height: 1.7;">內用・外帶・外送<br><span style="font-size: 13px; color: #857662;">線上訂購、來店取貨</span></span>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showSeasonal }}" hint-placeholder-val="{{ true }}">
+    <section style="max-width: 1120px; margin: 48px auto 0; padding: 0 24px;">
+      <div style="border: 1px dashed #A6503B; background: rgba(166,80,59,0.06); padding: 18px 26px; display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;">
+        <span style="font-size: 12px; letter-spacing: 0.32em; color: #A6503B; font-weight: 700;">期間限定</span>
+        <span style="font-family: 'Noto Serif TC', serif; font-size: 18px; font-weight: 700; letter-spacing: 0.06em;">芭氣美式 NT$150</span>
+        <span style="font-size: 14px; color: #6B5A48;">紅心芭樂與義式濃縮，搭配沁涼氣泡水的台式浪漫。</span>
+      </div>
+    </section>
+  </sc-if>
+
+  <section style="max-width: 1120px; margin: 0 auto; padding: 72px 24px 40px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 40px;">
+      <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 32px; font-weight: 700; letter-spacing: 0.08em;">人氣餐點</h2>
+      <button onClick="{{ goMenu }}" style="background: none; border: none; cursor: pointer; color: #A6503B; font-size: 14px; letter-spacing: 0.2em; padding: 0; border-bottom: 1px solid #A6503B;" style-hover="color: #3B2A20; border-bottom: 1px solid #3B2A20;">完整菜單 →</button>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 28px;">
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <img src="assets/beef-burger.jpeg" alt="香煎厚牛堡" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+          <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.06em;">香煎厚牛堡</h3>
+          <span style="font-family: 'Noto Serif TC', serif; font-size: 17px; color: #A6503B; white-space: nowrap;">NT$&nbsp;155</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #857662;">極致的肉汁誘惑，牛肉香氣在口中爆發。加顆蛋更美味！</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <img src="assets/chicken-salad.jpeg" alt="咕咕舒肥雞沙拉" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+          <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.06em;">咕咕舒肥雞沙拉</h3>
+          <span style="font-family: 'Noto Serif TC', serif; font-size: 17px; color: #A6503B; white-space: nowrap;">NT$&nbsp;200</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #857662;">多汁舒肥雞搭配生菜與水煮蛋，增肌減脂的好夥伴。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <img src="assets/caesar-salad.jpeg" alt="培根凱薩沙拉" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+          <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.06em;">培根凱薩沙拉</h3>
+          <span style="font-family: 'Noto Serif TC', serif; font-size: 17px; color: #A6503B; white-space: nowrap;">NT$&nbsp;180</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #857662;">培根的鹹香酥脆，與清爽生菜的完美平衡。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <img src="assets/ham-sandwich.jpeg" alt="火腿蛋三明治" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+          <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.06em;">火腿蛋三明治</h3>
+          <span style="font-family: 'Noto Serif TC', serif; font-size: 17px; color: #A6503B; white-space: nowrap;">NT$&nbsp;90</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #857662;">鹹香火腿配金黃煎蛋，夾入香脆吐司，簡單令人滿足。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <img src="assets/latte.jpeg" alt="精選拿鐵" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+          <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.06em;">精選拿鐵</h3>
+          <span style="font-family: 'Noto Serif TC', serif; font-size: 17px; color: #A6503B; white-space: nowrap;">NT$&nbsp;100</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #857662;">咖啡的醇厚與牛奶的甜美完美交融，戀職人鮮奶調製。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <img src="assets/madeleine.jpeg" alt="瑪德蓮" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+          <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.06em;">瑪德蓮</h3>
+          <span style="font-family: 'Noto Serif TC', serif; font-size: 17px; color: #A6503B; white-space: nowrap;">NT$&nbsp;80</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #857662;">奶油香氣濃郁，口感鬆軟細緻。</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #FDFAF3; border-top: 1px solid #DFD5C3; border-bottom: 1px solid #DFD5C3; margin-top: 40px;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 64px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="width: 54px; height: 54px; border-radius: 50%; background: rgba(166,80,59,0.09); display: grid; place-items: center;"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#A6503B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14 C5 8 10 5 16 5 C22 5 27 8 26 14 L26 25 C26 26.1 25.1 27 24 27 L8 27 C6.9 27 6 26.1 6 25 Z"></path><circle cx="12.5" cy="16.5" r="1" fill="#A6503B" stroke="none"></circle><circle cx="19.5" cy="16.5" r="1" fill="#A6503B" stroke="none"></circle><path d="M13.5 20.5 Q16 22.5 18.5 20.5"></path></svg></span>
+        <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.1em;">新鮮現做</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">三明治、漢堡、沙拉與厚片，兼顧飽足與清爽。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="width: 54px; height: 54px; border-radius: 50%; background: rgba(166,80,59,0.09); display: grid; place-items: center;"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#A6503B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12 L8.5 26 C8.7 27.2 9.6 28 10.8 28 L20.2 28 C21.4 28 22.3 27.2 22.5 26 L24.5 12 Z"></path><path d="M24 14.5 C27.5 14.5 27.5 20 23.2 20"></path><path d="M12.5 8.5 C12.5 7 13.5 7 13.5 5.5"></path><path d="M18 8.5 C18 7 19 7 19 5.5"></path><circle cx="13" cy="17.5" r="1" fill="#A6503B" stroke="none"></circle><circle cx="18.5" cy="17.5" r="1" fill="#A6503B" stroke="none"></circle><path d="M13.8 21 Q15.8 22.8 17.8 21"></path></svg></span>
+        <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.1em;">咖啡與特調</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">經典美式、拿鐵與氣泡咖啡；鮮奶使用開元「戀職人」動物福利鮮奶。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="width: 54px; height: 54px; border-radius: 50%; background: rgba(166,80,59,0.09); display: grid; place-items: center;"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#A6503B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15 C12 10 20 10 25 15"></path><path d="M10.5 19.5 C14 16.5 18 16.5 21.5 19.5"></path><circle cx="16" cy="24" r="1.8" fill="#A6503B" stroke="none"></circle></svg></span>
+        <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.1em;">舒服空間</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">免費 Wi-Fi，適合聊天、閱讀與短時間工作。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="width: 54px; height: 54px; border-radius: 50%; background: rgba(166,80,59,0.09); display: grid; place-items: center;"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#A6503B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 11.5 L23.5 11.5 L25.3 26 C25.4 27.1 24.6 28 23.5 28 L8.5 28 C7.4 28 6.6 27.1 6.7 26 Z"></path><path d="M12 11.5 C12 7.5 20 7.5 20 11.5"></path><circle cx="12.8" cy="18" r="1" fill="#A6503B" stroke="none"></circle><circle cx="19.2" cy="18" r="1" fill="#A6503B" stroke="none"></circle><path d="M13.6 21.5 Q16 23.5 18.4 21.5"></path></svg></span>
+        <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 19px; font-weight: 700; letter-spacing: 0.1em;">點餐方便</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">支援線上預訂、來店取貨、外帶與外送。</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 820px; margin: 0 auto; padding: 88px 24px; text-align: center; display: flex; flex-direction: column; gap: 26px; align-items: center;">
+    <span style="font-size: 12px; letter-spacing: 0.42em; color: #A6503B;">關於老山羊</span>
+    <p style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 27px; line-height: 1.9; font-weight: 500; letter-spacing: 0.04em; text-wrap: pretty;">「山羊踏實走路，<br>我們踏實做餐。」</p>
+    <p style="margin: 0; font-size: 15px; line-height: 2; color: #6B5A48; max-width: 46ch;">從清晨的一杯美式，到份量剛好的三明治、漢堡與沙拉，每份餐點都新鮮現做——適合上班前快速帶走，也適合坐下來慢慢享用。</p>
+    <button onClick="{{ goAbout }}" style="background: none; border: none; cursor: pointer; color: #A6503B; font-size: 14px; letter-spacing: 0.2em; padding: 0; border-bottom: 1px solid #A6503B;" style-hover="color: #3B2A20; border-bottom: 1px solid #3B2A20;">認識我們 →</button>
+  </section>
+
+  <section style="background: #3B2A20; color: #F0E8D8;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 64px 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-family: 'Noto Serif TC', serif; font-size: 20px; letter-spacing: 0.28em; color: #D9A441;">★★★★★</span>
+        <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 26px; font-weight: 700; letter-spacing: 0.06em;">喝得順口嗎？留一顆星星給山羊。</h2>
+        <p style="margin: 0; font-size: 14px; color: #BCA98F; letter-spacing: 0.06em;">你的 Google 評價，是小店走下去最實在的力氣。</p>
+      </div>
+      <a href="https://maps.app.goo.gl/RbqXZyZKfjnNsVpA9" target="_blank" rel="noopener" style="background: #F0E8D8; color: #3B2A20; padding: 15px 34px; font-size: 14px; letter-spacing: 0.22em; border-radius: 2px; white-space: nowrap;" style-hover="background: #A6503B; color: #F0E8D8;">到 Google 地圖評價</a>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isMenu }}" hint-placeholder-val="{{ false }}">
+<main style="animation: fadeUp 0.5s ease both;">
+  <section style="max-width: 860px; margin: 0 auto; padding: 72px 24px 8px; text-align: center; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+    <span style="font-size: 12px; letter-spacing: 0.42em; color: #A6503B;">MENU</span>
+    <h1 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: clamp(32px, 6vw, 42px); font-weight: 900; letter-spacing: 0.1em;">菜單</h1>
+    <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662; max-width: 52ch;">外帶套餐：任一餐點搭配飲品折 NT$20。目前僅收現金；基於食品安全考量，不提供美乃滋。價格以店內與線上點餐系統公告為準。拿鐵與鮮奶茶使用開元「戀職人」動物福利鮮奶。</p>
+    <a href="https://shop.ichefpos.com/store/BKXtxlFQ/ordering" target="_blank" rel="noopener" style="background: #5C4033; color: #F0E8D8; padding: 12px 28px; font-size: 14px; letter-spacing: 0.22em; border-radius: 2px;" style-hover="background: #A6503B; color: #F0E8D8;">直接線上點餐</a>
+  </section>
+  <section style="max-width: 860px; margin: 0 auto; padding: 40px 24px 96px; display: flex; flex-direction: column; gap: 60px;">
+    <sc-for list="{{ sections }}" as="sec" hint-placeholder-count="5">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: baseline; gap: 16px; border-bottom: 2px solid #3B2A20; padding-bottom: 14px; margin-bottom: 10px;">
+          <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 25px; font-weight: 700; letter-spacing: 0.12em;">{{ sec.t }}</h2>
+          <span style="font-size: 12px; letter-spacing: 0.3em; color: #A6503B;">{{ sec.en }}</span>
+        </div>
+        <sc-for list="{{ sec.items }}" as="item" hint-placeholder-count="4">
+          <div style="display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px dashed #DFD5C3;">
+            <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+              <span style="font-size: 16px; font-weight: 500; letter-spacing: 0.05em;">{{ item.n }}</span>
+              <span style="font-size: 13px; line-height: 1.7; color: #857662;">{{ item.d }}</span>
+            </div>
+            <span style="flex: 1 1 auto;"></span>
+            <span style="font-family: 'Noto Serif TC', serif; font-size: 18px; color: #A6503B; white-space: nowrap;">$&nbsp;{{ item.p }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+    <p style="margin: 0; font-size: 13px; color: #B0A183; text-align: center; letter-spacing: 0.1em;">外帶塑膠袋 NT$1・期間限定品項售完為止</p>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+<main style="animation: fadeUp 0.5s ease both;">
+  <section data-rsp="two" style="max-width: 1120px; margin: 0 auto; padding: 72px 24px 40px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <span style="font-size: 12px; letter-spacing: 0.42em; color: #A6503B;">ABOUT</span>
+      <h1 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: clamp(32px, 6vw, 42px); line-height: 1.4; font-weight: 900; letter-spacing: 0.08em;">開在長庚旁的<br>日常咖啡店</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 2.1; color: #6B5A48;">老山羊咖啡把咖啡、輕食與早午餐放進一個舒服的日常空間。從清晨的一杯美式，到份量剛好的三明治、漢堡與沙拉，每份餐點都新鮮現做，適合上班前快速帶走，也適合坐下來慢慢享用。</p>
+      <p style="margin: 0; font-size: 15px; line-height: 2.1; color: #6B5A48;">店裡有免費 Wi-Fi 和性別友善洗手間，附近有收費停車場；不管是看診前後、上班途中，還是想找個地方安靜一下，都歡迎進來坐坐。</p>
+    </div>
+    <div style="width: 100%; aspect-ratio: 4 / 5; position: relative;">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="about1" src="assets/combo-square.jpeg" shape="rounded" radius="6" placeholder="餐點照片" hint-size="100%,540px"></x-import>
+    </div>
+  </section>
+
+  <section style="background: #FDFAF3; border-top: 1px solid #DFD5C3; border-bottom: 1px solid #DFD5C3;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;">
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="width: 56px; height: 56px; border-radius: 50%; background: rgba(166,80,59,0.09); display: grid; place-items: center;"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#A6503B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14 C5 8 10 5 16 5 C22 5 27 8 26 14 L26 25 C26 26.1 25.1 27 24 27 L8 27 C6.9 27 6 26.1 6 25 Z"></path><circle cx="12.5" cy="16.5" r="1" fill="#A6503B" stroke="none"></circle><circle cx="19.5" cy="16.5" r="1" fill="#A6503B" stroke="none"></circle><path d="M13.5 20.5 Q16 22.5 18.5 20.5"></path></svg></span>
+        <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 20px; font-weight: 700; letter-spacing: 0.1em;">餐點，新鮮現做</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">現點現做，熱的是熱的、脆的是脆的。基於食品安全考量，我們不提供美乃滋。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="width: 56px; height: 56px; border-radius: 50%; background: rgba(166,80,59,0.09); display: grid; place-items: center;"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#A6503B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12 L8.5 26 C8.7 27.2 9.6 28 10.8 28 L20.2 28 C21.4 28 22.3 27.2 22.5 26 L24.5 12 Z"></path><path d="M24 14.5 C27.5 14.5 27.5 20 23.2 20"></path><path d="M12.5 8.5 C12.5 7 13.5 7 13.5 5.5"></path><path d="M18 8.5 C18 7 19 7 19 5.5"></path><circle cx="13" cy="17.5" r="1" fill="#A6503B" stroke="none"></circle><circle cx="18.5" cy="17.5" r="1" fill="#A6503B" stroke="none"></circle><path d="M13.8 21 Q15.8 22.8 17.8 21"></path></svg></span>
+        <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 20px; font-weight: 700; letter-spacing: 0.1em;">飲品，從早到晚</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">美式、拿鐵、氣泡咖啡、鮮奶茶與無咖啡因花草茶——不喝咖啡的人也有好選擇。</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="width: 56px; height: 56px; border-radius: 50%; background: rgba(166,80,59,0.09); display: grid; place-items: center;"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#A6503B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="10.5"></circle><path d="M16 10.5 L16 16 L20 18.5"></path></svg></span>
+        <h3 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 20px; font-weight: 700; letter-spacing: 0.1em;">節奏，快而不趕</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">線上點餐、來店取貨，趕時間拿了就走；坐下來的話，Wi-Fi 和插座都幫你準備好了。</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-rsp="two" style="max-width: 1120px; margin: 0 auto; padding: 80px 24px 0; display: grid; grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr); gap: 56px; align-items: center;">
+    <div style="background: #FFFFFF; border: 1px solid #DFD5C3; border-radius: 6px; padding: 24px; display: grid; place-items: center;">
+      <img src="assets/milk-carton.png" alt="戀職人動物福利鮮奶" style="width: 100%; max-width: 240px; height: auto; display: block;">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <span style="font-size: 12px; letter-spacing: 0.42em; color: #A6503B;">嚴選鮮乳</span>
+      <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.08em;">戀職人・動物福利鮮奶</h2>
+      <p style="margin: 0; font-size: 15px; line-height: 2.1; color: #6B5A48;">店裡的拿鐵與鮮奶茶，用的是開元食品「戀職人」動物福利鮮奶——100% 台灣生乳、無調整無添加，生乳來自通過動物福利標章驗證的友善牧場。對乳牛好一點，奶香也會誠實一點。</p>
+      <span style="font-size: 13px; color: #B0A183; letter-spacing: 0.08em;">動物福利標章驗證・100% 台灣生乳・無調整無添加</span>
+    </div>
+  </section>
+
+  <section data-rsp="two" style="max-width: 1120px; margin: 0 auto; padding: 80px 24px 96px; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 56px; align-items: center;">
+    <div style="width: 100%; aspect-ratio: 3 / 2; position: relative;">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="about2" src="assets/storefront-wide.jpg" shape="rounded" radius="6" placeholder="店面照片" hint-size="100%,340px"></x-import>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 30px; font-weight: 700; letter-spacing: 0.08em;">下次經過，進來坐坐</h2>
+      <p style="margin: 0; font-size: 15px; line-height: 2.1; color: #6B5A48;">白色招牌上有一顆咖啡豆，就在復興北路 6 巷裡。平日清晨 06:30 開門，早班前來得及帶一份早餐再走。</p>
+      <div style="display: flex; gap: 14px;">
+        <button onClick="{{ goContact }}" style="background: #3B2A20; color: #F0E8D8; border: none; cursor: pointer; padding: 13px 30px; font-size: 14px; letter-spacing: 0.22em; border-radius: 2px;" style-hover="background: #A6503B;">怎麼找到我們</button>
+      </div>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isRental }}" hint-placeholder-val="{{ false }}">
+<main style="animation: fadeUp 0.5s ease both;">
+  <section data-rsp="two" style="max-width: 1120px; margin: 0 auto; padding: 72px 24px 48px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <span style="font-size: 12px; letter-spacing: 0.42em; color: #A6503B;">SPACE RENTAL</span>
+      <h1 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: clamp(32px, 6vw, 42px); line-height: 1.4; font-weight: 900; letter-spacing: 0.08em;">共享空間・<br>包場方案</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 2.1; color: #6B5A48;">讀書會、小型講座、社團聚會、品牌拍攝——把老山羊的空間借給你。有免費 Wi-Fi 與插座，咖啡與餐點直接由吧台供應，辦活動不用自己張羅茶水。</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://lin.ee/QDPOw4B" target="_blank" rel="noopener" style="background: #A6503B; color: #F6F1E8; padding: 13px 28px; font-size: 14px; letter-spacing: 0.2em; border-radius: 2px;" style-hover="background: #3B2A20; color: #F6F1E8;">LINE 洽詢檔期</a>
+        <a href="tel:0900415590" style="border: 1px solid #3B2A20; color: #3B2A20; padding: 13px 28px; font-size: 14px; letter-spacing: 0.2em; border-radius: 2px;" style-hover="background: #3B2A20; color: #F0E8D8;">0900-415-590</a>
+      </div>
+    </div>
+    <div style="width: 100%; aspect-ratio: 4 / 3; position: relative;">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="rental" shape="rounded" radius="6" placeholder="放一張店內空間照片" hint-size="100%,380px"></x-import>
+    </div>
+  </section>
+
+  <section style="max-width: 1120px; margin: 0 auto; padding: 8px 24px 48px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;">
+      <div style="background: #FDFAF3; border: 1px solid #DFD5C3; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-size: 12px; letter-spacing: 0.32em; color: #A6503B;">方案一</span>
+        <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em;">讀書會・工作聚會</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">平日離峰時段的半場預留，適合 6–12 人的讀書會、桌遊或團隊工作聚會。</p>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #6B5A48; border-top: 1px dashed #DFD5C3; padding-top: 16px;">
+          <span>・預留座位區、不受併桌打擾</span>
+          <span>・每人低消一杯飲品</span>
+          <span>・Wi-Fi、插座、白板可借用</span>
+        </div>
+      </div>
+      <div style="background: #FDFAF3; border: 1px solid #DFD5C3; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-size: 12px; letter-spacing: 0.32em; color: #A6503B;">方案二</span>
+        <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em;">小型講座・分享會</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">下午或打烊前時段的全店包場，適合 15–25 人的講座、分享會與社團活動。</p>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #6B5A48; border-top: 1px dashed #DFD5C3; padding-top: 16px;">
+          <span>・全店空間與座位自由安排</span>
+          <span>・飲品甜點可預訂、統一出餐</span>
+          <span>・活動佈置入場時間可談</span>
+        </div>
+      </div>
+      <div style="background: #FDFAF3; border: 1px solid #DFD5C3; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-size: 12px; letter-spacing: 0.32em; color: #A6503B;">方案三</span>
+        <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em;">拍攝・活動包場</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">品牌拍攝、採訪錄影或私人活動的整店時段承租，非營業時段亦可洽談。</p>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #6B5A48; border-top: 1px dashed #DFD5C3; padding-top: 16px;">
+          <span>・整店場地與吧台入鏡授權</span>
+          <span>・可加購現場咖啡飲品服務</span>
+          <span>・時段與布置需求彈性洽談</span>
+        </div>
+      </div>
+    </div>
+    <p style="margin: 20px 0 0; font-size: 13px; color: #B0A183; letter-spacing: 0.08em; text-align: center;">各方案費用依人數與時段報價，請以 LINE 或電話洽詢。</p>
+  </section>
+
+  <section style="background: #FDFAF3; border-top: 1px solid #DFD5C3; border-bottom: 1px solid #DFD5C3;">
+    <div style="max-width: 860px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 18px;">
+      <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 24px; font-weight: 700; letter-spacing: 0.1em;">包場須知</h2>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.9; color: #6B5A48;">
+        <span>一、請於活動日 7 天前預約，以 LINE 訊息確認檔期後才算成立。</span>
+        <span>二、包場時段以營業時間為原則（週二公休）；非營業時段請另洽。</span>
+        <span>三、目前僅收現金；餐飲低消與場地費用於確認檔期時一併報價。</span>
+        <span>四、場地內請勿攜帶外食；佈置以不損傷牆面與家具為原則。</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 96px; text-align: center; display: flex; flex-direction: column; gap: 20px; align-items: center;">
+    <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 26px; font-weight: 700; letter-spacing: 0.08em;">想在老山羊辦一場活動嗎？</h2>
+    <p style="margin: 0; font-size: 14px; color: #857662; letter-spacing: 0.06em;">告訴我們日期、人數與活動型態，一天內回覆檔期與報價。</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+      <a href="https://lin.ee/QDPOw4B" target="_blank" rel="noopener" style="background: #A6503B; color: #F6F1E8; padding: 14px 32px; font-size: 15px; letter-spacing: 0.22em; border-radius: 2px;" style-hover="background: #3B2A20; color: #F6F1E8;">LINE 洽詢</a>
+      <a href="tel:0900415590" style="border: 1px solid #3B2A20; color: #3B2A20; padding: 14px 32px; font-size: 15px; letter-spacing: 0.22em; border-radius: 2px;" style-hover="background: #3B2A20; color: #F0E8D8;">電話洽詢</a>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+<main style="animation: fadeUp 0.5s ease both;">
+  <section data-rsp="two" style="max-width: 1120px; margin: 0 auto; padding: 72px 24px 40px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start;">
+    <div style="display: flex; flex-direction: column; gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 12px; letter-spacing: 0.42em; color: #A6503B;">CONTACT</span>
+        <h1 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: clamp(32px, 6vw, 42px); font-weight: 900; letter-spacing: 0.1em;">聯絡與點餐</h1>
+      </div>
+      <div style="display: grid; grid-template-columns: 96px 1fr; gap: 18px 20px; font-size: 15px; line-height: 1.9;">
+        <span style="color: #A6503B; letter-spacing: 0.2em; font-size: 13px; padding-top: 3px;">地址</span>
+        <span>333 桃園市龜山區文化里復興北路 6 巷 47 號<br><span style="font-size: 13px; color: #B0A183;">林口長庚商圈・附近有收費停車場</span></span>
+        <span style="color: #A6503B; letter-spacing: 0.2em; font-size: 13px; padding-top: 3px;">電話</span>
+        <span><a href="tel:0900415590" style="color: #3B2A20;">0900-415-590</a></span>
+        <span style="color: #A6503B; letter-spacing: 0.2em; font-size: 13px; padding-top: 3px;">付款</span>
+        <span>目前僅收現金</span>
+        <span style="color: #A6503B; letter-spacing: 0.2em; font-size: 13px; padding-top: 3px;">設施</span>
+        <span>免費 Wi-Fi・性別友善洗手間</span>
+      </div>
+      <div style="border-top: 1px solid #DFD5C3; padding-top: 24px; display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 13px; letter-spacing: 0.3em; color: #A6503B;">營業時間</span>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <sc-for list="{{ days }}" as="day" hint-placeholder-count="7">
+            <div style="display: flex; align-items: baseline; gap: 14px; padding: 8px 0; border-bottom: 1px dashed #EAE1CE;">
+              <span style="font-size: 14px; letter-spacing: 0.14em; width: 48px;">{{ day.d }}</span>
+              <sc-if value="{{ day.today }}" hint-placeholder-val="{{ false }}"><span style="font-size: 11px; letter-spacing: 0.14em; background: #A6503B; color: #F6F1E8; padding: 2px 8px; border-radius: 999px;">今天</span></sc-if>
+              <span style="flex: 1 1 auto;"></span>
+              <span style="font-size: 14px; color: #6B5A48; letter-spacing: 0.06em;">{{ day.h }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <span style="font-size: 12px; color: #B0A183;">週日供餐起始時間以店家當日公告為準。</span>
+      </div>
+      <sc-if value="{{ showDelivery }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #DFD5C3; padding-top: 24px;">
+          <span style="font-size: 13px; letter-spacing: 0.3em; color: #A6503B;">外送與自取</span>
+          <span style="font-size: 14px; line-height: 1.9; color: #6B5A48;">支援外送與線上訂購、來店取貨——用線上點餐系統下單，到店直接取餐不用等。</span>
+        </div>
+      </sc-if>
+      <div style="border-top: 1px solid #DFD5C3; padding-top: 24px; display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-size: 13px; letter-spacing: 0.3em; color: #A6503B;">GOOGLE 評價</span>
+        <a href="https://maps.app.goo.gl/RbqXZyZKfjnNsVpA9" target="_blank" rel="noopener" style="font-size: 14px; letter-spacing: 0.1em; border-bottom: 1px solid #A6503B; width: fit-content;">在 Google 地圖上找到我們，留下一顆星 →</a>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="background: #FDFAF3; border: 1px solid #DFD5C3; padding: 40px; display: flex; flex-direction: column; gap: 22px;">
+        <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 24px; font-weight: 700; letter-spacing: 0.1em;">怎麼點餐</h2>
+        <p style="margin: 0; font-size: 14px; line-height: 2; color: #857662;">先點好、到店就拿，早上趕時間最方便；也可以加 LINE 直接問今天有什麼。</p>
+        <a href="https://shop.ichefpos.com/store/BKXtxlFQ/ordering" target="_blank" rel="noopener" style="background: #A6503B; color: #F6F1E8; padding: 15px 32px; font-size: 15px; letter-spacing: 0.24em; border-radius: 2px; text-align: center;" style-hover="background: #3B2A20; color: #F6F1E8;">線上點餐（iCHEF）</a>
+        <a href="https://lin.ee/QDPOw4B" target="_blank" rel="noopener" style="border: 1px solid #55701C; color: #55701C; padding: 14px 32px; font-size: 15px; letter-spacing: 0.24em; border-radius: 2px; text-align: center;" style-hover="background: #55701C; color: #F6F1E8;">加 LINE 詢問</a>
+        <a href="tel:0900415590" style="border: 1px solid #3B2A20; color: #3B2A20; padding: 14px 32px; font-size: 15px; letter-spacing: 0.24em; border-radius: 2px; text-align: center;" style-hover="background: #3B2A20; color: #F0E8D8;">撥打 0900-415-590</a>
+        <span style="font-size: 12px; color: #B0A183; text-align: center; letter-spacing: 0.08em;">目前僅收現金，取餐時再付款即可。</span>
+      </div>
+      <div style="border: 1px solid #DFD5C3; padding: 8px; background: #FDFAF3;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d115656.99071552102!2d121.215368!3d25.0584647!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7007c3a9947%3A0x6fb0efb196a18c87!2z6ICB5bGx576K5ZKW5ZWh77yI5p6X5Y-j6ZW35bqa5bqX77yJ772c6LyV6aOf5pep5Y2I6aSQ44O75aSW5bi25aSW6YCB!5e0!3m2!1szh-TW!2stw!4v1784365127830!5m2!1szh-TW!2stw" width="100%" height="300" style="border: 0; display: block; filter: grayscale(0.2) sepia(0.06);" allowfullscreen="allowfullscreen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="老山羊咖啡 林口長庚店 地圖"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<footer style="background: #3B2A20; color: #BCA98F;">
+  <div data-rsp="foot" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 40px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 48px;">
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; align-items: center; gap: 11px;">
+        <svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="20" rx="12" ry="16" transform="rotate(20 20 20)" fill="#A6503B"></ellipse><path d="M15 6 C25 14 15 26 25 34" stroke="#3B2A20" stroke-width="2.6" fill="none" transform="rotate(20 20 20)"></path></svg>
+        <span style="font-family: 'Noto Serif TC', serif; font-size: 18px; font-weight: 700; letter-spacing: 0.14em; color: #F0E8D8;">老山羊咖啡・林口長庚店</span>
+      </div>
+      <p style="margin: 0; font-size: 13px; line-height: 2; letter-spacing: 0.08em;">咖啡｜輕食｜早午餐・外帶外送<br>從一杯咖啡，開啟舒服的一天。</p>
+      <p style="margin: 0; font-size: 12px; letter-spacing: 0.08em; color: #8A7660;">目前僅收現金・餐點新鮮現做</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px;">
+      <span style="font-size: 11px; letter-spacing: 0.32em; color: #A6503B;">頁面</span>
+      <button onClick="{{ goHome }}" style="background: none; border: none; cursor: pointer; color: #BCA98F; padding: 0; text-align: left; font-size: 14px; letter-spacing: 0.1em; font-family: 'Noto Sans TC', sans-serif;" style-hover="color: #F0E8D8;">首頁</button>
+      <button onClick="{{ goMenu }}" style="background: none; border: none; cursor: pointer; color: #BCA98F; padding: 0; text-align: left; font-size: 14px; letter-spacing: 0.1em; font-family: 'Noto Sans TC', sans-serif;" style-hover="color: #F0E8D8;">菜單</button>
+      <button onClick="{{ goAbout }}" style="background: none; border: none; cursor: pointer; color: #BCA98F; padding: 0; text-align: left; font-size: 14px; letter-spacing: 0.1em; font-family: 'Noto Sans TC', sans-serif;" style-hover="color: #F0E8D8;">關於</button>
+      <button onClick="{{ goRental }}" style="background: none; border: none; cursor: pointer; color: #BCA98F; padding: 0; text-align: left; font-size: 14px; letter-spacing: 0.1em; font-family: 'Noto Sans TC', sans-serif;" style-hover="color: #F0E8D8;">空間包場</button>
+      <button onClick="{{ goContact }}" style="background: none; border: none; cursor: pointer; color: #BCA98F; padding: 0; text-align: left; font-size: 14px; letter-spacing: 0.1em; font-family: 'Noto Sans TC', sans-serif;" style-hover="color: #F0E8D8;">聯絡與點餐</button>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px;">
+      <span style="font-size: 11px; letter-spacing: 0.32em; color: #A6503B;">找到我們</span>
+      <span style="letter-spacing: 0.08em; line-height: 1.9;">平日 06:30–16:30・週末 08:30–17:30（週二公休）<br>333 桃園市龜山區復興北路 6 巷 47 號</span>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="https://maps.app.goo.gl/RbqXZyZKfjnNsVpA9" target="_blank" rel="noopener" style="color: #D9A441; font-size: 13px; letter-spacing: 0.14em;">Google 地圖 →</a>
+        <a href="https://lin.ee/QDPOw4B" target="_blank" rel="noopener" style="color: #D9A441; font-size: 13px; letter-spacing: 0.14em;">LINE →</a>
+        <a href="https://shop.ichefpos.com/store/BKXtxlFQ/ordering" target="_blank" rel="noopener" style="color: #D9A441; font-size: 13px; letter-spacing: 0.14em;">線上點餐 →</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top: 1px solid #4E3A2C;">
+    <p style="max-width: 1120px; margin: 0 auto; padding: 18px 24px; font-size: 12px; letter-spacing: 0.12em; color: #8A7660;">© {{ year }} 老山羊咖啡 林口長庚店</p>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;announcement&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;外帶套餐：任一餐點搭配飲品折 NT$20&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;全站&quot; },
+  &quot;showSeasonal&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;首頁&quot; },
+  &quot;showDelivery&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;聯絡頁&quot; }
+}">
+class Component extends DCLogic {
+  state = { page: 'home' };
+  go(p) { this.setState({ page: p }); window.scrollTo(0, 0); }
+  renderVals() {
+    const p = this.state.page;
+    const ann = (this.props.announcement ?? '外帶套餐：任一餐點搭配飲品折 NT$20').trim();
+    const jsDay = new Date().getDay(); // 0=Sun
+    const days = [
+      { d: '週一', h: '06:30–16:30', i: 1 }, { d: '週二', h: '公休', i: 2 },
+      { d: '週三', h: '06:30–16:30', i: 3 }, { d: '週四', h: '06:30–16:30', i: 4 },
+      { d: '週五', h: '06:30–16:30', i: 5 }, { d: '週六', h: '08:30–17:30', i: 6 },
+      { d: '週日', h: '08:30–17:30', i: 0 },
+    ].map(x => ({ ...x, today: x.i === jsDay }));
+    return {
+      isHome: p === 'home', isMenu: p === 'menu', isAbout: p === 'about', isContact: p === 'contact', isRental: p === 'rental',
+      goHome: () => this.go('home'), goMenu: () => this.go('menu'),
+      goAbout: () => this.go('about'), goContact: () => this.go('contact'), goRental: () => this.go('rental'),
+      announcement: ann, hasAnnouncement: ann.length > 0,
+      showSeasonal: this.props.showSeasonal ?? true,
+      showDelivery: this.props.showDelivery ?? true,
+      year: new Date().getFullYear(),
+      days,
+      featured: [
+        { n: '香煎厚牛堡', p: 155, img: 'assets/beef-burger.jpeg', d: '極致的肉汁誘惑，牛肉香氣在口中爆發。加顆蛋更美味！' },
+        { n: '咕咕舒肥雞沙拉', p: 200, img: 'assets/chicken-salad.jpeg', d: '多汁舒肥雞搭配生菜與水煮蛋，增肌減脂的好夥伴。' },
+        { n: '培根凱薩沙拉', p: 180, img: 'assets/caesar-salad.jpeg', d: '培根的鹹香酥脆，與清爽生菜的完美平衡。' },
+        { n: '火腿蛋三明治', p: 90, img: 'assets/ham-sandwich.jpeg', d: '鹹香火腿配金黃煎蛋，夾入香脆吐司，簡單令人滿足。' },
+        { n: '精選拿鐵', p: 100, img: 'assets/latte.jpeg', d: '咖啡的醇厚與牛奶的甜美完美交融，口感圓潤滑順。' },
+        { n: '瑪德蓮', p: 80, img: 'assets/madeleine.jpeg', d: '奶油香氣濃郁，口感鬆軟細緻。' },
+      ],
+      sections: [
+        { t: '期間限定', en: 'LIMITED', items: [
+          { n: '芭氣美式', d: '紅心芭樂與義式濃縮，搭配沁涼氣泡水，顏值與風味兼具的台式浪漫限定！', p: 150, img: '' },
+        ]},
+        { t: '咖啡系列', en: 'COFFEE', items: [
+          { n: '精選美式', d: '經典純粹的咖啡風味！精選優質咖啡豆萃取，風味甘醇濃厚', p: 85, img: 'assets/americano.jpeg' },
+          { n: '精選拿鐵', d: '咖啡的醇厚與牛奶的甜美完美交融，口感圓潤滑順～', p: 100, img: 'assets/latte.jpeg' },
+          { n: '焦糖瑪奇朵', d: '入口先是焦糖微甜焦香，接著絲滑奶香與咖啡醇厚，層次奢華豐富', p: 110, img: '' },
+          { n: '榛果拿鐵', d: '在經典拿鐵中加入溫潤優雅的堅果香氣，溫潤順口，極具療癒', p: 110, img: '' },
+          { n: '黑糖拿鐵', d: '台灣黑糖融入經典拿鐵，焦香與奶香完美交織，每一口都是甜蜜滋味', p: 110, img: '' },
+          { n: '摩卡咖啡', d: '巧克力與咖啡的完美戀曲！濃郁巧克力與醇香咖啡，風味細膩迷人', p: 110, img: '' },
+          { n: '檸檬西西里氣泡咖啡', d: '夏日必喝的極致清爽！微酸、微甜與咖啡的甘苦在氣泡中爆發，消暑又解膩！', p: 145, img: '' },
+          { n: '香橙氣泡美式', d: '果香滿滿的清爽系！柳橙鮮甜、咖啡甘醇，結合清爽氣泡水，層次鮮明、沁涼提神', p: 145, img: '' },
+        ]},
+        { t: '飲料系列', en: 'TEA & MILK TEA', items: [
+          { n: '吉利紅茶', d: '推薦純粹好茶，百搭又耐喝的經典首選', p: 60, img: '' },
+          { n: '元氣綠茶', d: '清新的茉莉茶香！為您注入滿滿元氣，佐餐的最佳良伴～', p: 60, img: '' },
+          { n: '蜂蜜紅茶', d: '紅茶遇上蜂蜜！口感滑順，微甜不膩的滋味在舌尖蔓延', p: 70, img: '' },
+          { n: '蜂蜜綠茶', d: '茉莉綠茶的清爽，搭配淡淡蜜香，甜美解渴、層次豐富', p: 70, img: '' },
+          { n: '蜂蜜檸檬紅茶', d: '酸甜滋味的完美平衡！蜂蜜漬檸檬帶來自然果香，融合紅茶香氣', p: 85, img: '' },
+          { n: '熱帶水果茶', d: '融合百香果、鳳梨與香橙的迷人果香，每一口都喝得到陽光的味道', p: 85, img: '' },
+          { n: '柳橙綠茶', d: '香甜柳橙原汁融入清爽茉香綠茶，清甜爽口，解膩 NO.1', p: 85, img: '' },
+          { n: '福氣鮮奶茶', d: '醇厚紅茶與優質鮮乳的黃金比例，濃郁不膩的經典滋味', p: 90, img: '' },
+          { n: '黑糖鮮奶茶', d: '濃郁醇厚的手工古早味！黑糖甜香與奶香層層化開，甜蜜又療癒～', p: 100, img: '' },
+          { n: '焦糖鮮奶茶', d: '香濃焦糖與絲滑鮮奶茶的完美調和，最適合犒賞自己的甜點級飲品！', p: 100, img: 'assets/caramel-milktea.jpeg' },
+          { n: '蜂蜜鮮奶茶', d: '溫潤迷人的輕甜風味！捨棄砂糖改以蜜香提味，輕盈無負擔', p: 100, img: '' },
+        ]},
+        { t: '無咖啡因系列', en: 'CAFFEINE-FREE', items: [
+          { n: '美顏黑醋栗果茶（無糖）', d: '迷人色澤、酸甜交織、果香濃郁，清爽滋味縈繞口中', p: 70, img: '' },
+          { n: '舒壓花草茶（無糖）', d: '優雅的淡淡香氣，溫熱入口，溫和舒緩整天的忙碌與緊繃', p: 70, img: '' },
+          { n: '香橙黑醋栗茶', d: '香橙果香與黑醋栗酸甜的雙重奏！口感酸甜活潑，帶來滿滿活力', p: 85, img: '' },
+        ]},
+        { t: '氣泡飲系列', en: 'SPARKLING', items: [
+          { n: '蜂蜜檸檬氣泡飲', d: '檸檬清新微酸，搭配香甜蜂蜜與輕盈氣泡，多重滋味在舌尖跳躍', p: 100, img: '' },
+          { n: '熱帶水果氣泡飲', d: '充滿夏日風情的滋味！酸甜果味與氣泡完美激盪，解膩又過癮', p: 100, img: '' },
+          { n: '藍柑橘氣泡飲', d: '視覺與味覺的夢幻享受！海洋般湛藍色澤，清新香氣與沁涼氣泡', p: 100, img: '' },
+          { n: '檸檬氣泡飲', d: '純粹的極致清爽！突顯檸檬的自然清香與明亮酸韻，清涼解渴每一口！', p: 100, img: '' },
+        ]},
+        { t: '三明治系列', en: 'SANDWICH', items: [
+          { n: '火腿蛋三明治', d: '鹹香火腿片，搭配金黃煎蛋，夾入香脆吐司，簡單令人滿足', p: 90, img: 'assets/ham-sandwich.jpeg' },
+          { n: '培根蛋三明治', d: '焦香培根，搭配營養煎蛋與爽脆生菜，肉香與蛋香完美交融～', p: 90, img: '' },
+          { n: '總匯蛋三明治（豬排、火腿）', d: '份量十足，雙重肉食享受，飢腸轆轆時的澎湃首選！', p: 110, img: '' },
+          { n: '豬排蛋三明治', d: '嚴選鮮嫩豬排，配上金黃煎蛋，每一口都紮實回味～', p: 100, img: '' },
+          { n: '鮪魚玉米三明治', d: '清爽鮮甜的人氣口味！口感滑順豐富，大人小孩都喜愛！', p: 85, img: '' },
+          { n: '鮮蔬起司蛋三明治', d: '無負擔的健康輕食！口感清爽，輕鬆吃進滿滿健康活力', p: 85, img: '' },
+        ]},
+        { t: '漢堡系列', en: 'BURGER', items: [
+          { n: '火腿蛋堡', d: '鬆軟布里歐夾入鹹香火腿與金黃煎蛋，大口咬下喚醒一天的活力', p: 110, img: 'assets/ham-burger.jpeg' },
+          { n: '培根蛋堡', d: '焦香培根，搭配清爽生菜與鬆軟布里歐，令人回味無窮～', p: 110, img: '' },
+          { n: '總匯蛋堡（豬排、火腿）', d: '多汁豬排加上鹹香火腿，層次豐富、份量滿點！', p: 140, img: '' },
+          { n: '豬排蛋堡', d: '鮮嫩豬排搭配金黃煎蛋與爽脆生菜，每一口都令人大呼過癮', p: 130, img: '' },
+          { n: '鮮蔬起司蛋堡', d: '清爽解膩又營養滿分，鬆軟布里歐夾入起司與煎蛋！', p: 105, img: '' },
+          { n: '香煎厚牛堡', d: '極致的肉汁誘惑，肉食控絕對不能錯過！（加顆蛋更美味！）', p: 155, img: 'assets/beef-burger.jpeg' },
+        ]},
+        { t: '健康蔬食沙拉', en: 'SALAD', items: [
+          { n: '陽光鮮蔬沙拉', d: '爽脆生菜、多汁小番茄與營養水煮蛋，開啟輕盈一天的完美序曲～', p: 160, img: '' },
+          { n: '培根凱薩沙拉', d: '經典不敗的沙拉首選！培根的鹹香酥脆，與清爽生菜的完美平衡！', p: 180, img: 'assets/caesar-salad.jpeg' },
+          { n: '活力地瓜沙拉', d: '香甜地瓜、爽脆生菜、多汁小番茄與營養水煮蛋。給想吃原型食物的您！', p: 170, img: '' },
+          { n: '咕咕舒肥雞沙拉', d: '增肌減脂的好夥伴！兼顧美味與身材管理的最佳選擇', p: 200, img: 'assets/chicken-salad.jpeg' },
+        ]},
+        { t: '抹醬厚片系列', en: 'TOAST', items: [
+          { n: '巧克力厚片', d: '邪惡的療癒滋味！鬆軟厚片抹上香濃巧克力醬，外酥內軟、甜而不膩', p: 60, img: '' },
+          { n: '花生厚片', d: '經典不敗的滑順花生醬，表面微微金黃焦香，最純粹、復古的幸福', p: 60, img: '' },
+          { n: '香蒜厚片', d: '欲罷不能的鹹香誘惑！鹹香夠味，超級解饞', p: 60, img: '' },
+          { n: '奶酥厚片', d: '金黃色的香濃乳香！口感酥鬆的經典奶酥，大人小孩都愛', p: 60, img: '' },
+          { n: '蜂糖厚片', d: '甜蜜誘人的純粹美味！口口香甜、滋潤不乾口', p: 60, img: '' },
+        ]},
+        { t: '甜點系列', en: 'DESSERT', items: [
+          { n: '瑪德蓮', d: '奶油香氣濃郁，口感鬆軟細緻', p: 80, img: 'assets/madeleine.jpeg' },
+        ]},
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
