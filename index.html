@@ -79,8 +79,18 @@
   a:focus-visible, button:focus-visible { outline: 2px solid #A6503B; outline-offset: 2px; border-radius: 2px; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   @media (max-width: 900px) {
-    [data-rsp="hero"] { grid-template-columns: 1fr !important; padding-top: 40px !important; }
+    [data-rsp="hero"] { grid-template-columns: 1fr !important; padding-top: 32px !important; gap: 32px !important; }
     [data-rsp="vert"] { display: none !important; }
+    [data-rsp="head"] { justify-content: center !important; padding: 10px 16px 0 !important; gap: 6px !important; }
+    [data-rsp="head"] img { height: 32px !important; }
+    [data-rsp="nav"] { flex: 1 0 100%; flex-wrap: nowrap !important; justify-content: flex-start !important; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px 6px; }
+    [data-rsp="nav"]::-webkit-scrollbar { display: none; }
+    [data-rsp="nav"] > button { flex: none; padding: 11px 9px !important; letter-spacing: 0.05em !important; }
+    [data-rsp="nav"] > a { display: none !important; }
+    [data-rsp="badge"] { right: 10px !important; bottom: 10px !important; font-size: 12px !important; padding: 10px 14px !important; }
+    [data-rsp="review"], [data-rsp="menuhead"], [data-rsp="menuhead"] p { width: auto !important; height: auto !important; }
+    [data-rsp="review"] { padding: 44px 20px !important; }
+    [data-rsp="review"] a { width: 100%; text-align: center; }
     [data-rsp="two"] { grid-template-columns: 1fr !important; }
     [data-rsp="foot"] { grid-template-columns: 1fr !important; }
     [data-rsp="cells"] { grid-template-columns: 1fr !important; }
@@ -91,8 +101,17 @@
     [data-rsp="rules"] { grid-template-columns: 1fr !important; }
     [data-rsp="rules"] > div:nth-child(odd) { padding-bottom: 0 !important; }
     [data-rsp="rules"] > div:nth-child(even) { border-top: none !important; padding-top: 6px !important; }
-    [data-rsp="mcta"] { display: flex !important; }
-    body { padding-bottom: 70px; }
+    [data-rsp="mcta"] { display: flex !important; padding-bottom: calc(10px + env(safe-area-inset-bottom)) !important; }
+    body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+  }
+  @media (max-width: 560px) {
+    main > section, footer > div { padding-left: 18px !important; padding-right: 18px !important; }
+    main > section > div { max-width: 100% !important; }
+    [data-rsp="combo"] { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; padding: 18px 20px !important; }
+    [data-rsp="combo"] > div:first-child { flex-direction: row !important; align-items: baseline !important; gap: 8px !important; padding: 0 0 12px !important; border-right: none !important; border-bottom: 1px dashed #C8B69B; width: 100%; }
+    [data-rsp="mitem"] { gap: 12px !important; align-items: flex-start !important; }
+    [data-rsp="mitem"] img { width: 58px !important; height: 58px !important; }
+    [data-rsp="quote"] { font-size: 22px !important; }
   }
 </style>
 </helmet>
@@ -136,7 +155,7 @@
       <div style="width: 100%; aspect-ratio: 4 / 5; position: relative;">
         <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="hero" src="assets/storefront-portrait.jpg" shape="rounded" radius="6" placeholder="店門口照片" hint-size="100%,520px"></x-import>
       </div>
-      <div style="position: absolute; right: -14px; bottom: -14px; background: #3B2A20; color: #F0E8D8; padding: 14px 20px; font-family: 'Noto Serif TC', serif; font-size: 14px; letter-spacing: 0.24em; pointer-events: none;">復興北路 6 巷 47 號</div>
+      <div data-rsp="badge" style="position: absolute; right: -14px; bottom: -14px; background: #3B2A20; color: #F0E8D8; padding: 14px 20px; font-family: 'Noto Serif TC', serif; font-size: 14px; letter-spacing: 0.24em; pointer-events: none;">復興北路 6 巷 47 號</div>
     </div>
   </section>
 
@@ -197,13 +216,13 @@
   <section style="max-width: 820px; margin: 0 auto; padding: 88px 24px; text-align: center; display: flex; flex-direction: column; gap: 26px; align-items: center;">
     <img loading="lazy" src="assets/logo-square.png" alt="老山羊咖啡" style="height: 118px; width: auto; display: block; opacity: 0.9;">
     
-    <p style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 27px; line-height: 1.9; font-weight: 500; letter-spacing: 0.04em; text-wrap: pretty;">「山羊踏實走路，<br>我們踏實做餐。」</p>
+    <p data-rsp="quote" style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 27px; line-height: 1.9; font-weight: 500; letter-spacing: 0.04em; text-wrap: pretty;">「山羊踏實走路，<br>我們踏實做餐。」</p>
     <p style="margin: 0; font-size: 15px; line-height: 2; color: #6B5A48; max-width: 46ch;">從清晨的一杯美式，到份量充足的三明治、漢堡與沙拉，每份餐點都新鮮現做——適合上班前快速帶走，也適合坐下來慢慢享用。</p>
     <button onClick="{{ goAbout }}" style="background: none; border: none; cursor: pointer; color: #A6503B; font-size: 14px; letter-spacing: 0.2em; padding: 0; border-bottom: 1px solid #A6503B;" style-hover="color: #3B2A20; border-bottom: 1px solid #3B2A20;">認識我們 →</button>
   </section>
 
   <section style="background: #3B2A20; color: #F0E8D8;">
-    <div style="max-width: 1120px; margin: 0 auto; padding: 64px 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; width: 1081px; height: 15px">
+    <div data-rsp="review" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; width: 1081px; height: 15px">
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <span style="font-family: 'Noto Serif TC', serif; font-size: 20px; letter-spacing: 0.28em; color: #D9A441;">★★★★★</span>
         <h2 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: 26px; font-weight: 700; letter-spacing: 0.06em;">喜歡老山羊嗎？請給予我們一點鼓勵。</h2>
@@ -218,10 +237,10 @@
 <sc-if value="{{ isMenu }}" hint-placeholder-val="{{ false }}">
 <main style="animation: fadeUp 0.5s ease both;">
   
-  <section style="max-width: 860px; margin: 0 auto; padding: 72px 24px 8px; text-align: center; display: flex; flex-direction: column; gap: 16px; align-items: center; width: 816px; height: 328px">
+  <section data-rsp="menuhead" style="max-width: 860px; margin: 0 auto; padding: 72px 24px 8px; text-align: center; display: flex; flex-direction: column; gap: 16px; align-items: center; width: 816px; height: 328px">
     <h1 style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: clamp(32px, 6vw, 42px); font-weight: 900; letter-spacing: 0.1em;">菜單</h1><span style="font-size: 12px; letter-spacing: 0.42em; color: #A6503B;">MENU</span>
     
-    <div style="display: flex; align-items: center; gap: 20px; text-align: left; border: 1px solid #C8B69B; background: #FAF4E8; padding: 18px 26px; border-radius: 3px; margin-top: 4px;">
+    <div data-rsp="combo" style="display: flex; align-items: center; gap: 20px; text-align: left; border: 1px solid #C8B69B; background: #FAF4E8; padding: 18px 26px; border-radius: 3px; margin-top: 4px;">
       <div style="display: flex; flex-direction: column; align-items: center; gap: 2px; flex: none; padding-right: 20px; border-right: 1px dashed #C8B69B;">
         <span style="font-family: 'Noto Serif TC', serif; font-size: 30px; font-weight: 900; color: #A6503B; line-height: 1;">－20</span>
         <span style="font-size: 11px; letter-spacing: 0.3em; color: #A6503B;">NT$</span>
@@ -248,7 +267,7 @@
           </sc-if>
         </div>
         <sc-for list="{{ sec.items }}" as="item" hint-placeholder-count="4">
-          <div style="display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px dashed #DFD5C3;">
+          <div data-rsp="mitem" style="display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px dashed #DFD5C3;">
             <sc-if value="{{ item.img }}" hint-placeholder-val="{{ false }}">
               <img loading="lazy" src="{{ item.img }}" alt="{{ item.n }}" style="width: 66px; height: 66px; object-fit: cover; border-radius: 6px; flex: none;">
             </sc-if>
