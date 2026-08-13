@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ian94134.github.io/2026class/sitemap.xml
+Sitemap: https://ian94134.github.io/oldgoatcoffee/sitemap.xml
